@@ -4,5 +4,8 @@
     <string name="app_name">Paper and Pens</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="Welcome">Welcome to this Text-based Game</string>
+    <string name="ng">New Game</string>
+    <string name="load">Load Game</string>
 
 </resources>
