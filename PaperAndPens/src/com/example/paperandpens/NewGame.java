@@ -18,6 +18,7 @@ public class NewGame extends Activity {
 		setContentView(R.layout.newgame);
 		
 	}
+	
 
 	
 }

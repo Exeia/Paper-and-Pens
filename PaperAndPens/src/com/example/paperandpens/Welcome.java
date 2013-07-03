@@ -8,6 +8,7 @@ package com.example.paperandpens;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.*;
@@ -27,6 +28,15 @@ public class Welcome extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				try{
+				Class ng = Class.forName("com.example.paperandpens.NewGame");
+				Intent ngIntent = new Intent(Welcome.this, ng);
+				startActivity(ngIntent);
+				}
+				catch(ClassNotFoundException e)
+				{
+					e.printStackTrace();
+				}
 				
 			}
 		});
@@ -35,6 +45,15 @@ public class Welcome extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				try{
+					Class ld = Class.forName("com.example.paperandpens.NewGame");
+					Intent ldIntent = new Intent(Welcome.this, ld);
+					startActivity(ldIntent);
+					}
+					catch(ClassNotFoundException e)
+					{
+						e.printStackTrace();
+					}
 				
 			}
 		});
