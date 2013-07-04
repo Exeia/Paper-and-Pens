@@ -10,6 +10,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-      	android:textSize="25dp"
-        android:text="@string/Welcome" />
+      	android:textSize="25sp"
+        android:text="@string/intro" />
+
+    <EditText
+        android:id="@+id/editText"
+       	android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" 
+        />
+
+    <Button
+        android:id="@+id/enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#013ADF"
+        android:text="@string/submit"
+        android:textColor="#FFFFFF" />
+
 </LinearLayout>

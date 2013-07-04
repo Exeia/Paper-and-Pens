@@ -7,5 +7,7 @@
     <string name="Welcome">Welcome to this Text-based Game</string>
     <string name="ng">New Game</string>
     <string name="load">Load Game</string>
+    <string name="intro">Greetings Traveler! May I ask you who you are?</string>
+    <string name="submit">Submit</string>
 
 </resources>

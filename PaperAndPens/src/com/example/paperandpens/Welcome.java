@@ -46,7 +46,7 @@ public class Welcome extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try{
-					Class ld = Class.forName("com.example.paperandpens.NewGame");
+					Class ld = Class.forName("com.example.paperandpens.LoadGame");
 					Intent ldIntent = new Intent(Welcome.this, ld);
 					startActivity(ldIntent);
 					}
