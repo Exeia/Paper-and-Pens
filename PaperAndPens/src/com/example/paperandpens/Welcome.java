@@ -15,7 +15,7 @@ import android.widget.*;
 
 public class Welcome extends Activity {
 
-	Button newGame,loadGame;
+	Button newGame,loadGame,exit;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class Welcome extends Activity {
 		setContentView(R.layout.activity_welcome);
 		newGame = (Button)findViewById(R.id.newGame);
 		loadGame = (Button)findViewById(R.id.loadGame);
+		exit = (Button)findViewById(R.id.exit);
 		newGame.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -57,8 +58,34 @@ public class Welcome extends Activity {
 				
 			}
 		});
+		exit.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				boolean clean = false;
+				clean = onExit(v);
+				if (clean)
+				{
+					int pid = android.os.Process.myPid();
+					android.os.Process.killProcess(pid);
+				}
+			}
+
+			
+			
+		});
 	}
 
+	boolean onExit(View v)
+	{
+		try{
+			return true;
+		}catch(Exception e)
+		{
+			return false;
+		}
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

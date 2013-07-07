@@ -9,5 +9,7 @@
     <string name="load">Load Game</string>
     <string name="intro">Greetings Traveler! May I ask you who you are?</string>
     <string name="submit">Submit</string>
+    <string name="name">name</string>
+    <string name="exit">Exit</string>
 
 </resources>
