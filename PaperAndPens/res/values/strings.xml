@@ -11,5 +11,9 @@
     <string name="submit">Submit</string>
     <string name="name">name</string>
     <string name="exit">Exit</string>
+    <string name="warrior">Warrior</string>
+    <string name="Mage">Mage</string>
+    <string name="next">Next</string>
+    <string name="rogue">Thief</string>
 
 </resources>

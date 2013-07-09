@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/jb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/warrior"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rogue"
+        android:layout_below="@+id/rogue"
+        android:layout_marginTop="30dp"
+        android:text="@string/warrior" />
+
+    <Button
+        android:id="@+id/mage"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/warrior"
+        android:layout_below="@+id/warrior"
+        android:layout_marginTop="24dp"
+        android:text="@string/Mage" />
+
+    <Button
+        android:id="@+id/rogue"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/jb"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="166dp"
+        android:text="@string/rogue" />
+
+</RelativeLayout>
