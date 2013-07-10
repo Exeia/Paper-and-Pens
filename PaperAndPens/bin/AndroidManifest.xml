@@ -36,7 +36,11 @@
         <activity
             android:name="com.example.paperandpens.JobSelection"
             android:label="@string/app_name" >
-           
+        </activity>
+        
+          <activity
+            android:name="com.example.paperandpens.Jobs"
+            android:label="@string/app_name" >
         </activity>
     </application>
 

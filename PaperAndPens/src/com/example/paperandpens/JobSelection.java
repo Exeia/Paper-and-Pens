@@ -17,6 +17,7 @@ public class JobSelection extends Activity implements View.OnClickListener {
 	//String jobselection[] = {"Warrior","Rogue","Magi"};
 	String player ="";
 	TextView txt;
+	Button wa,ma,ti;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -26,14 +27,24 @@ public class JobSelection extends Activity implements View.OnClickListener {
 		Intent na = getIntent();
 		Bundle ext = na.getExtras();
 		player = ext.getString("NAME");
-		
+		classSelection();
 		txt.setText(player + ", Select a class.");
 		
+	}
+	private void classSelection()
+	{
+		wa = (Button) findViewById(R.id.warrior);
+		ma = (Button) findViewById(R.id.mage);
+		ti = (Button) findViewById(R.id.rogue);
+		wa.setOnClickListener(this);
+		ma.setOnClickListener(this);
+		ti.setOnClickListener(this);
 	}
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		String job;
+		@SuppressWarnings("unused")
+		String job= null;
 		Intent jb;
 		Bundle b;
 		switch(v.getId())
@@ -43,7 +54,7 @@ public class JobSelection extends Activity implements View.OnClickListener {
 			jb = new Intent(JobSelection.this,Jobs.class);
 			b = new Bundle();
 			b.putString("NAME", player);
-			b.putString("JOB",job);
+			b.putInt("JOB", R.string.warrior);
 			jb.putExtras(b);
 			startActivity(jb);
 			break;
@@ -52,7 +63,7 @@ public class JobSelection extends Activity implements View.OnClickListener {
 			jb = new Intent(JobSelection.this,Jobs.class);
 			b = new Bundle();
 			b.putString("NAME", player);
-			b.putString("JOB",job);
+			b.putInt("JOB",R.string.Mage);
 			jb.putExtras(b);
 			startActivity(jb);
 			break;
@@ -61,7 +72,7 @@ public class JobSelection extends Activity implements View.OnClickListener {
 			jb = new Intent(JobSelection.this,Jobs.class);
 			b = new Bundle();
 			b.putString("NAME", player);
-			b.putString("JOB",job);
+			b.putInt("JOB",R.string.rogue);
 			jb.putExtras(b);
 			startActivity(jb);
 			break;

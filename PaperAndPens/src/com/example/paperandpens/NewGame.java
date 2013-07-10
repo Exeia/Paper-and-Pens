@@ -9,10 +9,10 @@ package com.example.paperandpens;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
+
 import android.view.View;
 import android.widget.*;
-import android.opengl.*;
+//import android.opengl.*;
 public class NewGame extends Activity {
 
 	Button enter, next;
