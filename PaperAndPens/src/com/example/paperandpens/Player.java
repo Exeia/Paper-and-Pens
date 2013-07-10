@@ -1,8 +1,14 @@
 package com.example.paperandpens;
 
-public class Player {
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.Log;
+
+
+public class Player implements Parcelable {
 	private String na, jo;
 	private int str,mag,dex,con,hp,mp;
+	
 	public Player(String name, String job, int str, int mag, int dex, int cons, int hp,int mp)
 	{
 		na = name;
@@ -12,6 +18,21 @@ public class Player {
 		this.con = cons;
 		this.hp = hp;
 		this.mp = mp;
+		
+	}
+	public Player(Parcel input)
+	{
+		readFromParcel(input); 
+	}
+	private void readFromParcel(Parcel input) {
+		// TODO Auto-generated method stub
+		na = input.readString();
+		jo = input.readString();
+		str = input.readInt();
+		mag = input.readInt();
+		dex = input.readInt();
+		con = input.readInt();
+		hp = input.readInt();
 		
 	}
 	public String getJob()
@@ -27,6 +48,10 @@ public class Player {
 	public int getStr()
 	{
 		return str;
+	}
+	public int getMag()
+	{
+		return mag;
 	}
 	public int getDex()
 	{
@@ -44,8 +69,35 @@ public class Player {
 	{
 		return mp;
 	}
-	public void levelUp()
+	public void levelUp(int strength, int intell, int dexterity, int cons, int hitpt, int magpt)
 	{
+		str = str + strength;
+		mag = mag + intell;
+		dex = dex + dexterity;
+		con = con + cons;
+		hp = hp + hitpt;
+		mp = mp + magpt;
 		
 	}
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public void writeToParcel(Parcel out, int flag) {
+		String tag = null;
+		// TODO Auto-generated method stub
+		Log.v(tag, "writing parcel.."+ flag);
+		out.writeString(getName());
+		out.writeString(getJob());
+		out.writeInt(getStr());
+		out.writeInt(getMag());
+		out.writeInt(getDex());
+		out.writeInt(getCon());
+		out.writeInt(getHp());
+		out.writeInt(getMp());
+		
+	}
+
 }

@@ -1,5 +1,7 @@
 package com.example.paperandpens;
 
-public class Jobs {
+import android.app.Activity;
+
+public class Jobs extends Activity {
 
 }

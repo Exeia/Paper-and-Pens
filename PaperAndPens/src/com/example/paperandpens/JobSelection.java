@@ -26,20 +26,44 @@ public class JobSelection extends Activity implements View.OnClickListener {
 		Intent na = getIntent();
 		Bundle ext = na.getExtras();
 		player = ext.getString("NAME");
+		
 		txt.setText(player + ", Select a class.");
 		
 	}
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
+		String job;
+		Intent jb;
+		Bundle b;
 		switch(v.getId())
 		{
 		case R.id.warrior:
-			
+			job = "warrior";
+			jb = new Intent(JobSelection.this,Jobs.class);
+			b = new Bundle();
+			b.putString("NAME", player);
+			b.putString("JOB",job);
+			jb.putExtras(b);
+			startActivity(jb);
 			break;
 		case R.id.mage:
+			job = "mage";
+			jb = new Intent(JobSelection.this,Jobs.class);
+			b = new Bundle();
+			b.putString("NAME", player);
+			b.putString("JOB",job);
+			jb.putExtras(b);
+			startActivity(jb);
 			break;
 		case R.id.rogue:
+			job = "rogue";
+			jb = new Intent(JobSelection.this,Jobs.class);
+			b = new Bundle();
+			b.putString("NAME", player);
+			b.putString("JOB",job);
+			jb.putExtras(b);
+			startActivity(jb);
 			break;
 			
 		}
