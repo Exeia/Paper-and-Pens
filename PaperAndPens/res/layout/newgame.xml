@@ -14,21 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-      	android:textSize="15sp"
+      	android:textSize="20sp"
         android:text="@string/intro" />
-
-
-
-<Button
-    android:id="@+id/next1"
-    android:layout_width="250dp"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginBottom="16dp"
-    android:background="#013ADF"
-    android:text="@string/next"
-    android:textColor="#FFFFFF" />
 
 <EditText
     android:id="@+id/editText"
@@ -47,8 +34,9 @@
     android:id="@+id/enter"
     android:layout_width="250dp"
     android:layout_height="wrap_content"
-    android:layout_alignLeft="@+id/next1"
-    android:layout_below="@+id/editText"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="16dp"
     android:background="#013ADF"
     android:text="@string/submit"
     android:textColor="#FFFFFF" />

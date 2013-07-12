@@ -36,6 +36,7 @@ public class NewGame extends Activity {
 				try{
 				
 					Thread.sleep(2000);
+					gotoJob();
 					//txt.setText(name + ", on next screen what is class are you?");
 					
 				}catch (InterruptedException e)
@@ -47,14 +48,14 @@ public class NewGame extends Activity {
 			}
 		});
 		
-		next.setOnClickListener(new View.OnClickListener() {
+	/*	next.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				gotoJob();
 			}
-		});
+		});*/
 	}
 	
 	@Override
@@ -79,10 +80,7 @@ public class NewGame extends Activity {
 				startActivity(jb);
 		
 	}
-	public String getName()
-	{
-		return name;
-	}
+	
 	
 
 	

@@ -1,6 +1,6 @@
 package com.example.paperandpens;
 
-public abstract class Skills {
+public class Skills {
 	String name, desc;
 	public Skills(String name, String desc)
 	{
