@@ -86,6 +86,23 @@ public class Player implements Parcelable {
 		mp = mp + magpt;
 		
 	}
+	public void addSkill(Skills s)
+	{
+		ch_skill.add(s);
+	}
+	public Skills getSkills(String s)
+	{
+		Skills skill = null, temp;
+		for(int i = 0; i < ch_skill.size(); i++)
+		{
+			temp = ch_skill.get(i);
+			if(temp.getName().equals(s) )
+			{
+				skill = temp;
+			}
+		}
+		return skill;
+	}
 	@Override
 	public int describeContents() {
 		// TODO Auto-generated method stub

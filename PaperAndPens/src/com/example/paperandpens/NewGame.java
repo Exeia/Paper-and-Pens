@@ -23,7 +23,7 @@ public class NewGame extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.newgame);
 		enter = (Button)findViewById(R.id.enter);
-		next = (Button)findViewById(R.id.next1);
+	
 		txt = (TextView)findViewById(R.id.textView1);
 		
 		enter.setOnClickListener(new View.OnClickListener() {

@@ -144,6 +144,7 @@ public class Jobs extends Activity implements  View.OnClickListener{
 		{
 		case R.id.back:
 			ch = new Player(name,job, str, mag, dex, cons, hp, mp );
+			
 			break;
 		case R.id.reroll:
 			StatsGen(job_id);
