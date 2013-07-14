@@ -2,10 +2,12 @@ package com.example.paperandpens;
 
 public class Skills {
 	String name, desc;
-	public Skills(String name, String desc)
+	boolean passive;
+	public Skills(String name, String desc, boolean passive,int damage, int status)
 	{
 		this.name = name;
 		this.desc = desc;
+		this.passive = passive;
 	}
 	public String getName()
 	{
@@ -15,5 +17,13 @@ public class Skills {
 	{
 		return desc;
 	}
+	public boolean isPassive()
+	{
+		return passive;
 	
+	}
+	public void execute()
+	{
+		
+	}
 }

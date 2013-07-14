@@ -43,10 +43,12 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_welcome=0x7f030000;
-        public static final int jobclass=0x7f030001;
-        public static final int jobinfo=0x7f030002;
-        public static final int loadgame=0x7f030003;
-        public static final int newgame=0x7f030004;
+        public static final int battle=0x7f030001;
+        public static final int jobclass=0x7f030002;
+        public static final int jobinfo=0x7f030003;
+        public static final int loadgame=0x7f030004;
+        public static final int newgame=0x7f030005;
+        public static final int start=0x7f030006;
     }
     public static final class menu {
         public static final int welcome=0x7f070000;
