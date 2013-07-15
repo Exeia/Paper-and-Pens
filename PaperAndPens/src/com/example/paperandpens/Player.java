@@ -1,7 +1,5 @@
 package com.example.paperandpens;
 
-import java.util.ArrayList;
-
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
@@ -10,7 +8,7 @@ import android.util.Log;
 public class Player implements Parcelable {
 	private String na, jo;
 	private int str,mag,dex,con,hp,mp;
-	private ArrayList <Skills> ch_skill = new ArrayList<Skills>();
+	
 	public Player(String name, String job, int str, int mag, int dex, int cons, int hp,int mp)
 	{
 		na = name;
@@ -35,11 +33,6 @@ public class Player implements Parcelable {
 		dex = input.readInt();
 		con = input.readInt();
 		hp = input.readInt();
-		
-	}
-	
-	public void Armored()
-	{
 		
 	}
 	public String getJob()
@@ -97,6 +90,23 @@ public class Player implements Parcelable {
 		hp = hp + hitpt;
 		mp = mp + magpt;
 		
+	}
+	public void addSkill(Skills s)
+	{
+		ch_skill.add(s);
+	}
+	public Skills getSkills(String s)
+	{
+		Skills skill = null, temp;
+		for(int i = 0; i < ch_skill.size(); i++)
+		{
+			temp = ch_skill.get(i);
+			if(temp.getName().equals(s) )
+			{
+				skill = temp;
+			}
+		}
+		return skill;
 	}
 	@Override
 	public int describeContents() {

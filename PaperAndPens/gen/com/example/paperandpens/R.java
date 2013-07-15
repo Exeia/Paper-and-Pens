@@ -26,29 +26,52 @@ public final class R {
     public static final class id {
         public static final int action_settings=0x7f080010;
         public static final int back=0x7f08000a;
+<<<<<<< HEAD
         public static final int button1=0x7f08000f;
         public static final int editText=0x7f08000d;
         public static final int enter=0x7f08000e;
+=======
+        public static final int button1=0x7f08000e;
+        public static final int editText=0x7f08000c;
+        public static final int enter=0x7f08000d;
+>>>>>>> 19ab148a2b23317906e58c142a8825cb0ad43eee
         public static final int exit=0x7f080002;
         public static final int info=0x7f080009;
         public static final int jb=0x7f080004;
         public static final int loadGame=0x7f080003;
         public static final int mage=0x7f080007;
         public static final int newGame=0x7f080001;
-        public static final int reroll=0x7f08000c;
+        public static final int next1=0x7f08000b;
         public static final int rogue=0x7f080006;
-        public static final int stat=0x7f08000b;
         public static final int textView1=0x7f080000;
         public static final int title=0x7f080008;
         public static final int warrior=0x7f080005;
     }
     public static final class layout {
         public static final int activity_welcome=0x7f030000;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 38f04767973ff8c6a3b35bece0ee13e7a52947dc
+        public static final int battle=0x7f030001;
+        public static final int jobclass=0x7f030002;
+        public static final int jobinfo=0x7f030003;
+        public static final int loadgame=0x7f030004;
+        public static final int newgame=0x7f030005;
+        public static final int start=0x7f030006;
+<<<<<<< HEAD
+=======
         public static final int jobclass=0x7f030001;
         public static final int jobinfo=0x7f030002;
         public static final int loadgame=0x7f030003;
         public static final int newgame=0x7f030004;
         public static final int tester=0x7f030005;
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 84e076d... Clean up and finishing up character creation
+=======
+>>>>>>> 38f04767973ff8c6a3b35bece0ee13e7a52947dc
+>>>>>>> 19ab148a2b23317906e58c142a8825cb0ad43eee
     }
     public static final class menu {
         public static final int welcome=0x7f070000;
@@ -66,7 +89,6 @@ public final class R {
         public static final int next=0x7f05000d;
         public static final int ng=0x7f050004;
         public static final int prev=0x7f05000e;
-        public static final int reroll=0x7f05000f;
         public static final int rogue=0x7f05000c;
         public static final int submit=0x7f050007;
         public static final int warrior=0x7f05000a;

@@ -4,6 +4,8 @@ Paper-and-Pens
 This is a text-based adventure/rpg game in Android
 
 
+This will have a tuned based battle system
+
  Copyright (C) 2013  Peter Keomanivanh
 
     This program is free software: you can redistribute it and/or modify
