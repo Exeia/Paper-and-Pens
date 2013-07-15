@@ -18,6 +18,7 @@ public class Jobs extends Activity {
 	String test = "rogue";
 	int job_id;
 	TextView jobName, jobInfo;
+	Player ch;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -62,7 +63,7 @@ public class Jobs extends Activity {
 	}
 	
 
-<<<<<<< HEAD
+
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
@@ -78,5 +79,4 @@ public class Jobs extends Activity {
 		}
 	}
 =======
->>>>>>> parent of 84e076d... Clean up and finishing up character creation
 }

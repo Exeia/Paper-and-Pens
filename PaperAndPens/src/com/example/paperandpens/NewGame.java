@@ -23,11 +23,7 @@ public class NewGame extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.newgame);
 		enter = (Button)findViewById(R.id.enter);
-<<<<<<< HEAD
-	//	next = (Button)findViewById(R.id.next1);
-=======
-	
->>>>>>> 19ab148a2b23317906e58c142a8825cb0ad43eee
+
 		txt = (TextView)findViewById(R.id.textView1);
 		
 		enter.setOnClickListener(new View.OnClickListener() {
@@ -51,14 +47,7 @@ public class NewGame extends Activity {
 			}
 		});
 		
-		next.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				gotoJob();
-			}
-		});
+
 	}
 	
 	@Override
