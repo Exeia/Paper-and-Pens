@@ -76,6 +76,18 @@ public class Player implements Parcelable {
 	{
 		return mp;
 	}
+	public Skills getSkill(String s)
+	{
+		Skills found = null;
+		for(int i = 0; i < ch_skill.size(); i++)
+		{
+			if(s.equals(ch_skill.get(i).getName()))
+			{
+				found = ch_skill.get(i);
+			}
+		}
+		return found;
+	}
 	public void levelUp(int strength, int intell, int dexterity, int cons, int hitpt, int magpt)
 	{
 		str = str + strength;
