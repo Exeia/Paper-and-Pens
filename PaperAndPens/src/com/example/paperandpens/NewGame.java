@@ -37,7 +37,7 @@ public class NewGame extends Activity {
 				
 					Thread.sleep(2000);
 					//txt.setText(name + ", on next screen what is class are you?");
-					
+					gotoJob();
 				}catch (InterruptedException e)
 				{
 					e.printStackTrace();
