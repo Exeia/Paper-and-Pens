@@ -2,15 +2,21 @@ package com.example.paperandpens;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
 
+@SuppressLint("ParcelCreator")
 public class Player implements Parcelable {
 	private String na, jo;
+	//stats
 	private int str,mag,dex,con,hp,mp;
+	//skill list
 	private ArrayList <Skills> ch_skill = new ArrayList<Skills>();
+	//item inventory
+	private ArrayList <Item> inventory = new ArrayList<Item>();
 	public Player(String name, String job, int str, int mag, int dex, int cons, int hp,int mp)
 	{
 		na = name;
@@ -70,6 +76,11 @@ public class Player implements Parcelable {
 	public int getMp()
 	{
 		return mp;
+		
+	}
+	public void addSkills(Skills sk)
+	{
+		ch_skill.add(sk);
 	}
 	public Skills getSkill(String s)
 	{
@@ -109,6 +120,24 @@ public class Player implements Parcelable {
 			}
 		}
 		return skill;
+	}
+	public Item getItem(String s)
+	{
+
+		Item found = null;
+		for(int i = 0; i < ch_skill.size(); i++)
+		{
+			
+			if(inventory.get(i).getName().equals(s))
+			{
+				found = inventory.get(i);
+			}
+		}
+		return found;
+	}
+	public void addtoInventory(Item i)
+	{
+		inventory.add(i);
 	}
 	@Override
 	public int describeContents() {
