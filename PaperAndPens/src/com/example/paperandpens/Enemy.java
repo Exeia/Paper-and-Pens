@@ -1,5 +1,10 @@
 package com.example.paperandpens;
-
+/*
+ *Copyright 2013 Peter Keomanvianh
+ *[This program is licensed under the "GNU License"]
+ *Please see the file LICENSE in the source
+ *distribution of this software for license terms.
+*/
 import android.os.Parcel;
 
 public class Enemy extends Player {

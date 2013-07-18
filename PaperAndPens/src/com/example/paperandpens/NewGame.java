@@ -72,11 +72,6 @@ public class NewGame extends Activity {
 				startActivity(jb);
 		
 	}
-	public String getName()
-	{
-		return name;
-	}
 	
-
 	
 }

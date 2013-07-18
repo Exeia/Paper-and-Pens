@@ -1,5 +1,10 @@
 package com.example.paperandpens;
-
+/*
+ *Copyright 2013 Peter Keomanvianh
+ *[This program is licensed under the "GNU License"]
+ *Please see the file LICENSE in the source
+ *distribution of this software for license terms.
+*/
 import java.util.ArrayList;
 
 import android.annotation.SuppressLint;
@@ -12,7 +17,7 @@ import android.util.Log;
 public class Player implements Parcelable {
 	private String na, jo;
 	//stats
-	private int str,mag,dex,con,hp,mp;
+	private int str,mag,dex,con,hp,mp, basedmg, exp;
 	//skill list
 	private ArrayList <Skills> ch_skill = new ArrayList<Skills>();
 	//item inventory
@@ -26,11 +31,16 @@ public class Player implements Parcelable {
 		this.con = cons;
 		this.hp = hp;
 		this.mp = mp;
-		
+		basedmg =  (str + dex)/2;
+		exp = 0;
 	}
 	public Player(Parcel input)
 	{
 		readFromParcel(input); 
+	}
+	public int getBased()
+	{
+		return basedmg;
 	}
 	private void readFromParcel(Parcel input) {
 		// TODO Auto-generated method stub
@@ -43,6 +53,18 @@ public class Player implements Parcelable {
 		hp = input.readInt();
 		
 	}
+	public boolean isLevelup()
+	{
+		if(exp >= 100 )
+		{
+			exp = exp -100;
+			return true;
+		}
+		else 
+		{
+			return false;
+		}
+	}
 	public String getJob()
 	{
 		return jo;
@@ -53,6 +75,7 @@ public class Player implements Parcelable {
 		return na;
 	
 	}
+	
 	public int getStr()
 	{
 		return str;
@@ -76,6 +99,16 @@ public class Player implements Parcelable {
 	public int getMp()
 	{
 		return mp;
+		
+	}
+	public void Damaged(int d)
+	{
+		hp = hp - d;
+	}
+	
+	public void useMp (int m)
+	{
+		mp = mp -m;
 		
 	}
 	public void addSkills(Skills sk)
@@ -102,6 +135,7 @@ public class Player implements Parcelable {
 		con = con + cons;
 		hp = hp + hitpt;
 		mp = mp + magpt;
+		basedmg = basedmg + (int)((str+dex)/2); 
 		
 	}
 	public void addSkill(Skills s)

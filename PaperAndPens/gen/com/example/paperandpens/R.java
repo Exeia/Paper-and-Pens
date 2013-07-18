@@ -27,9 +27,9 @@ public final class R {
         public static final int action_settings=0x7f080014;
         public static final int back=0x7f08000a;
         public static final int button1=0x7f080013;
-        public static final int choice1=0x7f080012;
+        public static final int choice1=0x7f080010;
         public static final int choice2=0x7f080011;
-        public static final int choice3=0x7f080010;
+        public static final int choice3=0x7f080012;
         public static final int editText=0x7f08000d;
         public static final int enter=0x7f08000e;
         public static final int exit=0x7f080002;
