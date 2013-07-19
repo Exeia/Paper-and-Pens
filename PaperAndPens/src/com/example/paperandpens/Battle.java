@@ -29,18 +29,33 @@ public class Battle extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.battle);
-		
+		status = (TextView) findViewById(R.id.bStatus);
+		atk = (Button) findViewById(R.id.atk);
+		def = (Button) findViewById(R.id.def);
+		skills = (Button) findViewById(R.id.skill);
+		flee = (Button) findViewById(R.id.flee);
 	}
+	
 	public void start()
 	{
+		status.setText("Encounter "+ e.size() + " enemies");
 		while(true)
 		{
 			if(e.isEmpty() || person.getHp()<=0)
 			{
 				//set text indicating that is either character dies or enemy is taken care of.
-				
+				if(e.isEmpty())
+				{
+					status.setText("All hostiles eliminated \n");
+				}
+				else
+				{
+					status.setText("You have died");
+				}
 				break;
 			}
+		
+			
 			
 			
 		}
