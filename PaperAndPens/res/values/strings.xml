@@ -18,5 +18,9 @@
     <string name="next">Next</string>
     <string name="prev">Prev</string>
     <string name="reroll">Reroll</string>
+    <string name="attack">Attack</string>
+    <string name="def">Defend</string>
+    <string name="skill">Skill</string>
+    <string name="flee">GTFO</string>
 
 </resources>
