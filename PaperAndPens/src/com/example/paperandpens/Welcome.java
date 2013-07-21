@@ -30,6 +30,7 @@ public class Welcome extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				try{
+				@SuppressWarnings("rawtypes")
 				Class ng = Class.forName("com.example.paperandpens.NewGame");
 				Intent ngIntent = new Intent(Welcome.this, ng);
 				startActivity(ngIntent);

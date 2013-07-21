@@ -45,4 +45,15 @@
         android:text="@string/load"
         android:textSize="15sp" />
 
+    <Button
+        android:id="@+id/choice4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/choice3"
+        android:background="@android:color/transparent"
+        android:gravity="left"
+        android:text="@string/load"
+        android:textSize="15sp" />
+
 </RelativeLayout>

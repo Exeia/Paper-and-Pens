@@ -28,7 +28,7 @@ public class Battle extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.battle);
+		//setContentView(R.layout.battle);
 		status = (TextView) findViewById(R.id.bStatus);
 		atk = (Button) findViewById(R.id.atk);
 		def = (Button) findViewById(R.id.def);
@@ -39,27 +39,27 @@ public class Battle extends Activity {
 	public void start()
 	{
 		status.setText("Encounter "+ e.size() + " enemies");
-		while(true)
-		{
-			if(e.isEmpty() || person.getHp()<=0)
+		while(e.isEmpty() || person.getHp()<=0)
 			{
 				//set text indicating that is either character dies or enemy is taken care of.
 				if(e.isEmpty())
 				{
 					status.setText("All hostiles eliminated \n");
+					break;
 				}
-				else
+				else if (person.getHp() <= 0)
 				{
 					status.setText("You have died");
+					break;
 				}
-				break;
+			
 			}
+		
 		
 			
 			
-			
 		}
-	}
+	
 	public void attk(Player p, Enemy e )
 	{
 		 int dmg =0, hit ; 
