@@ -11,49 +11,49 @@
         android:text="@string/hello_world"
         android:textSize="15sp" />
 
-    <Button
+    <RadioButton
         android:id="@+id/choice1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/start"
         android:layout_marginTop="230dp"
-        android:background="@android:color/transparent"
         android:gravity="left"
         android:text="@string/hello_world"
         android:textSize="15sp" />
 
-    <Button
+    <RadioButton
         android:id="@+id/choice2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/choice1"
-        android:background="@android:color/transparent"
         android:gravity="left"
         android:text="@string/ng"
         android:textSize="15sp" />
 
-    <Button
+    <RadioButton
         android:id="@+id/choice3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/choice2"
-        android:background="@android:color/transparent"
         android:gravity="left"
         android:text="@string/load"
         android:textSize="15sp" />
 
-    <Button
+    <RadioButton
         android:id="@+id/choice4"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/choice3"
-        android:background="@android:color/transparent"
         android:gravity="left"
         android:text="@string/load"
         android:textSize="15sp" />
+
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

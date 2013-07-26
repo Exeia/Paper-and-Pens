@@ -5,7 +5,7 @@ package com.example.paperandpens;
  *Please see the file LICENSE in the source
  *distribution of this software for license terms.
 */
-public abstract class Skills {
+public  class Skills {
 	String name, desc;
 	boolean passive;
 	public Skills(String name, String desc, boolean passive,int damage, int status)
@@ -22,11 +22,7 @@ public abstract class Skills {
 	{
 		return desc;
 	}
-	public boolean isPassive()
-	{
-		return passive;
 	
-	}
 	public void execute()
 	{
 		

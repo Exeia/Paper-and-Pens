@@ -18,9 +18,10 @@ public class Jobs extends Activity implements View.OnClickListener{
 
 	Intent player;
 	Bundle pl_info;
-	String name, job;
+	String name, job, skillName, desc;
 	String test = "rogue";
 	int job_id;
+	Skills sk;
 	TextView jobName, jobInfo, charStat;
 	Random stats = new Random();
 	private int str =1, cons=1, mag, dex, hp, mp, range = 10;
@@ -57,6 +58,9 @@ public class Jobs extends Activity implements View.OnClickListener{
 			jobInfo.setText("Sneaky Sneaky and Stabby Stabby \n" +
 					"Skill set: \n"
 					+ "Double stab: Attack opponents two times\n" +"Passive: 1% dexterity bonus \n");
+			desc = " Attack opponents two times\n";
+			skillName = "Double Stab";
+			sk = new Skills(skillName, desc, false, 0,0);
 			StatsGen(id);
 			break;
 		case R.string.Mage:
@@ -64,6 +68,10 @@ public class Jobs extends Activity implements View.OnClickListener{
 			jobName.setText("Mage");
 			jobInfo.setText("You can shoot magic missile \n "+ "Skill set: \n"+
 			"Limited Power: shot out one lighting bolt to enemy \n"+ "Passive: 2% mana increase" );
+			desc = " Shoot out one lightning bolt \n";
+			skillName = "Limited Power";
+			sk = new Skills(skillName, desc, false, 0,0);
+
 			StatsGen(id);
 			break;
 		case R.string.warrior:
@@ -72,6 +80,10 @@ public class Jobs extends Activity implements View.OnClickListener{
 			"Skill Set: \n"+
 					"The Mighty Blow: 2x the base dmg\n" +
 					"Passive: 1% strength increase\n");
+			desc = "2x the base damage";
+			skillName = "The Mighty Blow";
+			sk = new Skills(skillName, desc, false, 0,0);
+
 			StatsGen(id);
 			break;
 			
@@ -138,6 +150,7 @@ public class Jobs extends Activity implements View.OnClickListener{
 		{
 		case R.id.back:
 			ch = new Player(name,job, str, mag, dex, cons, hp, mp );
+			ch.addSkill(sk);
 			Intent start = new Intent(Jobs.this, StartGame.class);
 			start.putExtra("character", ch);
 			startActivity(start);

@@ -76,6 +76,10 @@ public class Player implements Parcelable {
 	
 	}
 	
+	public void setExp(int e)
+	{
+		
+	}
 	public int getStr()
 	{
 		return str;
