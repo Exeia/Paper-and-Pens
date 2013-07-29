@@ -1,5 +1,8 @@
 package com.example.paperandpens;
 
+import android.util.Log;
+import android.widget.Button;
+
 
 
 /*
@@ -14,22 +17,30 @@ package com.example.paperandpens;
 
 public class GameScript extends Thread {
 
-	double scene;
+	int scene;
+	public int size = 4;
 	private String sc;
-	private String [] choice = new String[4];
+	private String [] choice = new String[size];
 	int choose;
-	boolean running = true;
+	boolean running;
+	int SLEEP = 2000;
+	Button b1,b2,b3,b4;
+	String TAG = StartGame.class.getSimpleName();
+ 
 	public void setRunning(boolean running)
 	{
 		this.running = running;
 	}
 	public GameScript()
 	{
-		scene = 1.0;
+		super();
+		scene = 1;
 		init();
+	
 	}
-	public GameScript(double scene)
+	public GameScript(int scene)
 	{
+		super();
 		this.scene = scene;
 	}
 	
@@ -43,56 +54,50 @@ public class GameScript extends Thread {
 	}
 	public void setScene(String sc)
 	{
-		
-	}
-	public void setChoices(String [] choice)
-	{
-		
+		this.sc = sc;
 	}
 	
+	public void setChoice(String [] choice)
+	{
+		for(int i=0; i < size; i++)
+		{
+			this.choice[i] = choice[i];
+			
+		}
+	}
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
 		String state = null;
-		if(scene == 1.0)
-		{
+	
 			init();
-		}
+		
+		Log.d(TAG,"In game loop...");
 		while(running)
 		{
 			/*want to get input*/
-			if(getInput(choose) != null)
+			state = getInput(choose);
+			if(state.equals(""))
 			{
-				state = getInput(choose);
+				continue;
 				
 			}
 			else 
 			{
-				continue;
+				update(scene, state);
+				state = "";
 			}
-			
+			try {
+				Thread.sleep(SLEEP); 	
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			
 		}
 	}
 	/* this will do setup what the user choices give a new setting*/
-	public void obtainChoice(int sit, int c)
-	{
-		switch(sit)
-		{
-		/* forest*/
-		case 0:
-			
-			break;
-		/*town*/
-			
-		case 1:
-			break;
-			
-		}
-		
-		
-	}
 	
 	public void init()
 	{
@@ -106,17 +111,6 @@ public class GameScript extends Thread {
 		
 	}
 	
-	
-	public void gameLoop()
-	{
-		String state = null;
-		while (running)
-		{
-			
-			
-		}
-		
-	}
 	public void chose(int i)
 	{
 		choose = i;
@@ -129,9 +123,11 @@ public class GameScript extends Thread {
 			{
 			case 1:
 				decide = choice[0];
+				Log.d(TAG,decide);
 				break;
 			case 2:
 				decide = choice[1];
+				Log.d(TAG,"choice2");
 				break;
 			case 3:
 				decide = choice[2];
@@ -141,13 +137,61 @@ public class GameScript extends Thread {
 				break;
 				
 			default:
-				decide = null;
+				decide = "";
+				Log.d(TAG,"hello");
 			}
 			return decide;
 	}
 	
-	public void update(int sit, int c)
+	public void update(int sit, String c)
 	{
+		switch(sit)
+		{
+		/*forest*/ 
+		case 1:
+			forest(c);
+			break;
+		}
+		
+	}
+	public void forest(String c)
+	{
+		String [] choice = new String[4];
+		int count = 0;
+		if(c.equals("Search around your surrounding.\n"))
+		{
+			if(count == 0)
+			{
+			setScene("You found a sword and potion yay!!!");
+			choice [0] = "Search around your surrounding.\n";
+			choice [1] = "Sleep in a creepy yet serene forest. \n";
+			choice [2] = "Proceed straight.\n";
+			choice [3] = "Take the left turn. \n";
+			setChoice(choice);
+			}
+			else 
+			{
+				setScene("There's nothing else around...");
+				choice [0] = "Search around your surrounding.\n";
+				choice [1] = "Sleep in a creepy yet serene forest. \n";
+				choice [2] = "Proceed straight.\n";
+				choice [3] = "Take the left turn. \n";
+				setChoice(choice);
+				
+			}
+			
+			
+		}
+		else if (c.equals("Sleep in a creepy yet serene forest. \n"))
+		{
+			setScene("You feel rested though you feel like someone or something watching you...");
+			choice [0] = "Search around your surrounding.\n";
+			choice [1] = "Sleep in a creepy yet serene forest. \n";
+			choice [2] = "Proceed straight.\n";
+			choice [3] = "Take the left turn. \n";
+			setChoice(choice);
+			
+		}
 		
 	}
 	

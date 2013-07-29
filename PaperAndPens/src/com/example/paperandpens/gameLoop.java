@@ -15,21 +15,6 @@ public class gameLoop extends Thread {
 		this.game = game;
 	}
 	
-	public void run()
-	{
-		while(running)
-		{
-		 //waiting for input
-			
-			//update game state
-			update();
-			
-		
-		}
-	}
-	public void update()
-	{
-		
-		game.update(0,0);
-	}
+	
+	
 }

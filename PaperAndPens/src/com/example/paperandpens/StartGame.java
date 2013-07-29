@@ -74,7 +74,8 @@ public class StartGame extends Activity implements  View.OnClickListener{
 			b2.setText(ch[1]);
 			b3.setText(ch[2]);
 			b4.setText(ch[3]);
-			
+			gm.setRunning(true);
+			gm.start();
 		
 	}
 	
@@ -85,6 +86,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 		// TODO Auto-generated method stub
 		super.onPause();
 		Log.d(TAG, "Pausing...");
+		
 	}
 	@Override
 	protected void onResume() {
@@ -100,20 +102,53 @@ public class StartGame extends Activity implements  View.OnClickListener{
 		{
 		case R.id.choice1:
 			choice = (String) b1.getText();
-			
+			gm.chose(ONE);
+			try {
+				Thread.sleep(1000);
+				update();
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		
 			Log.d(TAG, choice);
 			
 			break;
 		case R.id.choice2:
 			choice = (String) b2.getText();
+			gm.chose(TWO);
+			try {
+				Thread.sleep(500);
+				update();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 			Log.d(TAG, choice);
 			break;
 		case R.id.choice3:
 			choice = (String) b3.getText();
+			gm.chose(THREE);
+			try {
+				Thread.sleep(500);
+				update();
+
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			Log.d(TAG, choice);
 			break;
 		case R.id.choice4:
 			choice = (String) b3.getText();
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			update();
 			Log.d(TAG, choice);
 			break;
 			
@@ -125,10 +160,12 @@ protected void onDestroy() {
 	// TODO Auto-generated method stub
 	super.onDestroy();
 	Log.d(TAG,"Destroying..");
+	gm.setRunning(false);
 }
 public void update()
 {
-	status.setText(gm.getScene());
+	String scene = gm.getScene();
+	status.setText(scene);
 	ch = gm.getChoices();
 	
 	b1.setText(ch[0]);
