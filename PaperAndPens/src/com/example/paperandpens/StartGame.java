@@ -8,26 +8,31 @@ package com.example.paperandpens;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
+
 import android.widget.TextView;
 import java.util.*;
 public class StartGame extends Activity implements  View.OnClickListener{
-
+	int OPTION = 4, ONE = 1, TWO =2, THREE = 3, FOUR =4;
 	Thread t;
 	EditText cmd;
 	TextView status;
 	Button b1,b2,b3, b4;
 	String TAG = StartGame.class.getSimpleName();
-
+	String ch [] = new String[OPTION];
+	int state = 0;
 	Player pl;
 	Random rd = new Random();
-	boolean c1 = false,c2 = false,c3= false, c4 = false;
+	
+	private Handler hand = new Handler();
+	GameScript gm;
 	@Override
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
@@ -48,7 +53,11 @@ public class StartGame extends Activity implements  View.OnClickListener{
 		b2.setOnClickListener(this);
 		b3.setOnClickListener(this);
 		b4.setOnClickListener(this);
-		script();
+		if(isLoaded() == false)
+		{
+			script();
+		}
+		
 		
 	}
 	public void script()
@@ -56,48 +65,21 @@ public class StartGame extends Activity implements  View.OnClickListener{
 	//	boolean running = true;
 	//	while (running)
 	//	{
-	
-			status.setText("You are in the forest, there is a village a few miles away from where you are. There are two path ways, " +
-					"one going left and one going straight");
-			b1.setText("Search around your surrounding.\n");
-			b2.setText("Sleep in a creepy yet serene forest. \n");
-			b3.setText("Proceed straight.\n");
-			b4.setText("Take the left turn. \n");
+		
+			gm = new GameScript();
+			status.setText(gm.getScene());
+			ch = gm.getChoices();
+			
+			b1.setText(ch[0]);
+			b2.setText(ch[1]);
+			b3.setText(ch[2]);
+			b4.setText(ch[3]);
 			
 		
 	}
 	
 	
-	public String checkedInput()
-	{
-		String choice = null;
-		if (c1)
-		{
-			choice = "c1";
-		}
-		else if(c2)
-		{
-			choice = "c2";
-			}
-		else if (c3)
-		{
-			choice = "c3";
-		}
-		else 
-		{
-			choice = "c4";
-		}
-		
-		return choice;
-	}
-	public void selection()
-	{
-		b1.setOnClickListener(this);
-		b2.setOnClickListener(this);
-		b3.setOnClickListener(this);
-		b4.setOnClickListener(this);
-
-	}
+	
 	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub
@@ -120,6 +102,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 			choice = (String) b1.getText();
 			
 			Log.d(TAG, choice);
+			
 			break;
 		case R.id.choice2:
 			choice = (String) b2.getText();
@@ -136,14 +119,6 @@ public class StartGame extends Activity implements  View.OnClickListener{
 			
 		}
 	}
-	
-public void newChoice()
-{
-	c1 =false;
-	c2 =false;
-	c3 =false; 
-	c4 =false;
-}
 
 @Override
 protected void onDestroy() {
@@ -151,10 +126,23 @@ protected void onDestroy() {
 	super.onDestroy();
 	Log.d(TAG,"Destroying..");
 }
-
+public void update()
+{
+	status.setText(gm.getScene());
+	ch = gm.getChoices();
+	
+	b1.setText(ch[0]);
+	b2.setText(ch[1]);
+	b3.setText(ch[2]);
+	b4.setText(ch[3]);
+	
+}
 public void checked1()
 {
 	status.setText("You look around your surroundings and... suddenly "); 
 }
-
+public boolean isLoaded()
+{
+	return false;
+}
 }
