@@ -7,6 +7,7 @@ package com.example.paperandpens;
 */
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -43,6 +44,8 @@ public class StartGame extends Activity implements  View.OnClickListener{
 		b2 = (Button) findViewById(R.id.choice2);
 		b3 = (Button) findViewById(R.id.choice3);
 		b4 = (Button) findViewById(R.id.choice4);
+		Intent na = getIntent();
+		Bundle ext = na.getExtras();
 		/*b1 = (RadioButton) findViewById(R.id.choice1);
 		b2 = (RadioButton) findViewById(R.id.choice2);
 		b3 = (RadioButton) findViewById(R.id.choice3);
@@ -118,7 +121,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 			choice = (String) b2.getText();
 			gm.chose(TWO);
 			try {
-				Thread.sleep(500);
+				Thread.sleep(1000);
 				update();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -131,7 +134,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 			choice = (String) b3.getText();
 			gm.chose(THREE);
 			try {
-				Thread.sleep(500);
+				Thread.sleep(1000);
 				update();
 
 			} catch (InterruptedException e) {
@@ -143,12 +146,13 @@ public class StartGame extends Activity implements  View.OnClickListener{
 		case R.id.choice4:
 			choice = (String) b3.getText();
 			try {
-				Thread.sleep(500);
+				Thread.sleep(1000);
+				update();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			update();
+			
 			Log.d(TAG, choice);
 			break;
 			
@@ -174,10 +178,7 @@ public void update()
 	b4.setText(ch[3]);
 	
 }
-public void checked1()
-{
-	status.setText("You look around your surroundings and... suddenly "); 
-}
+
 public boolean isLoaded()
 {
 	return false;

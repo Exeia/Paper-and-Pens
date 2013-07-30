@@ -25,8 +25,9 @@ public class GameScript extends Thread {
 	boolean running;
 	int SLEEP = 2000;
 	Button b1,b2,b3,b4;
+	int count=0;
 	String TAG = StartGame.class.getSimpleName();
- 
+	private Player pl; 
 	public void setRunning(boolean running)
 	{
 		this.running = running;
@@ -103,7 +104,7 @@ public class GameScript extends Thread {
 	{
 		sc = "You are in the forest, there is a village a few miles away from where you are. There are two path ways, " +
 				"one going left and one going straight";
-		choice [0] = "Search around your surrounding.\n";
+		choice [0] = "Search around.\n";
 		choice [1] = "Sleep in a creepy yet serene forest. \n";
 		choice [2] = "Proceed straight.\n";
 		choice [3] = "Take the left turn. \n";
@@ -154,20 +155,21 @@ public class GameScript extends Thread {
 		}
 		
 	}
+	//need to add excalibur face (ﺧ益ﺨ)
 	public void forest(String c)
 	{
 		String [] choice = new String[4];
-		int count = 0;
-		if(c.equals("Search around your surrounding.\n"))
+		if(c.equals("Search around.\n"))
 		{
 			if(count == 0)
 			{
 			setScene("You found a sword and potion yay!!!");
-			choice [0] = "Search around your surrounding.\n";
+			choice [0] = "Search around.\n";
 			choice [1] = "Sleep in a creepy yet serene forest. \n";
 			choice [2] = "Proceed straight.\n";
 			choice [3] = "Take the left turn. \n";
 			setChoice(choice);
+			count ++;
 			}
 			else 
 			{
@@ -192,7 +194,35 @@ public class GameScript extends Thread {
 			setChoice(choice);
 			
 		}
-		
+		else if (c.equals("Sleep in a creepy yet serene forest. \n"))
+		{
+			setScene("You feel rested though you feel like someone or something watching you...");
+			choice [0] = "Search around your surrounding.\n";
+			choice [1] = "Sleep in a creepy yet serene forest. \n";
+			choice [2] = "Proceed straight.\n";
+			choice [3] = "Take the left turn. \n";
+			
+			setChoice(choice);
+			
+		}
+		else if(c.equals("Proceed straight.\n"))
+		{
+			setScene("You proceeded straight to where the you see a sign \'Beware\' \n");
+			choice [0] = "Proceed straight on.\n";
+			choice [1] = "Spot check. \n";
+			choice [2] = "-_-.\n";
+			choice [3] = " \n";
+			setChoice(choice);
+		}
+		else if(c.equals("Take the left turn.\n"))
+		{
+			setScene("You found yourself a shortcut to town \n");
+			choice [0] = "Proceed straight on.\n";
+			choice [1] = "Check Area. \n";
+			choice [2] = "-_-.\n";
+			choice [3] = " \n";
+			setChoice(choice);
+		}
 	}
 	
 }

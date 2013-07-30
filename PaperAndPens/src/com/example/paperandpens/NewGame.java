@@ -70,6 +70,7 @@ public class NewGame extends Activity {
 				b.putString("NAME", name);
 				jb.putExtras(b);
 				startActivity(jb);
+				finish();
 		
 	}
 	
