@@ -28,6 +28,8 @@ public class GameScript extends Thread {
 	int count=0;
 	String TAG = StartGame.class.getSimpleName();
 	private Player pl; 
+	
+	private int [] forestArea;
 	public void setRunning(boolean running)
 	{
 		this.running = running;
@@ -57,7 +59,16 @@ public class GameScript extends Thread {
 	{
 		this.sc = sc;
 	}
+	public void setPlayer(Player pl)
+	{
+		this.pl = pl;
 	
+	}
+	public Player getPlayer()
+	{
+		return pl;
+		
+	}
 	public void setChoice(String [] choice)
 	{
 		for(int i=0; i < size; i++)
@@ -139,7 +150,7 @@ public class GameScript extends Thread {
 				
 			default:
 				decide = "";
-				Log.d(TAG,"hello");
+				
 			}
 			return decide;
 	}
@@ -152,6 +163,9 @@ public class GameScript extends Thread {
 		case 1:
 			forest(c);
 			break;
+		case 2:
+			town(c);
+			break;
 		}
 		
 	}
@@ -159,6 +173,7 @@ public class GameScript extends Thread {
 	public void forest(String c)
 	{
 		String [] choice = new String[4];
+		String checking;
 		if(c.equals("Search around.\n"))
 		{
 			if(count == 0)
@@ -194,25 +209,30 @@ public class GameScript extends Thread {
 			setChoice(choice);
 			
 		}
-		else if (c.equals("Sleep in a creepy yet serene forest. \n"))
-		{
-			setScene("You feel rested though you feel like someone or something watching you...");
-			choice [0] = "Search around your surrounding.\n";
-			choice [1] = "Sleep in a creepy yet serene forest. \n";
-			choice [2] = "Proceed straight.\n";
-			choice [3] = "Take the left turn. \n";
-			
-			setChoice(choice);
-			
-		}
+		
 		else if(c.equals("Proceed straight.\n"))
 		{
+			if(count == 0)
+			{
 			setScene("You proceeded straight to where the you see a sign \'Beware\' \n");
-			choice [0] = "Proceed straight on.\n";
-			choice [1] = "Spot check. \n";
+			choice [0] = "Proceed straight\n";
+			choice [1] = "Check Area. \n";
 			choice [2] = "-_-.\n";
 			choice [3] = " \n";
+			count++;
 			setChoice(choice);
+			}
+			else
+			{
+				/*place battle*/
+				setScene("You see a spirit guarding a treasure \n");
+				choice [0] = "Battle on\n";
+				choice [1] = "Flee \n";
+				choice [2] = "-_-.\n";
+				choice [3] = " \n";
+				count++;
+				setChoice(choice);
+			}
 		}
 		else if(c.equals("Take the left turn.\n"))
 		{
@@ -221,8 +241,28 @@ public class GameScript extends Thread {
 			choice [1] = "Check Area. \n";
 			choice [2] = "-_-.\n";
 			choice [3] = " \n";
+			count++;
 			setChoice(choice);
 		}
+		else if(c.equals("Proceed straight on.\n"))
+		{
+			setScene("You have a town");
+			choice[0] = "Go to the Inn";
+			choice[1] = "Got to Armor/Weapon/Item Shop";
+			choice[2] = "Go to the Tavern";
+			choice[3] = "Go back to the forest";
+			
+		}
+		
+
+	}
+	public void checkedForestArea(String s, int c)
+	{
+		
 	}
 	
+	public void town(String ch)
+	{
+		
+	}
 }
