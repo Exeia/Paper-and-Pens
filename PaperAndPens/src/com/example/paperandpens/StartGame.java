@@ -46,7 +46,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 		b4 = (Button) findViewById(R.id.choice4);
 		Intent na = getIntent();
 		Bundle ext = na.getExtras();
-		pl = ext.getParcelable("CHARACTER");
+		pl = ext.getParcelable("character");
 		/*b1 = (RadioButton) findViewById(R.id.choice1);
 		b2 = (RadioButton) findViewById(R.id.choice2);
 		b3 = (RadioButton) findViewById(R.id.choice3);
@@ -145,7 +145,8 @@ public class StartGame extends Activity implements  View.OnClickListener{
 			Log.d(TAG, choice);
 			break;
 		case R.id.choice4:
-			choice = (String) b3.getText();
+			choice = (String) b4.getText();
+			gm.chose(FOUR);
 			try {
 				Thread.sleep(1000);
 				update();

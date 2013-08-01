@@ -195,7 +195,19 @@ public class Player implements Parcelable {
 		out.writeInt(getCon());
 		out.writeInt(getHp());
 		out.writeInt(getMp());
-		
+	}	
+public static final Parcelable.Creator<Player> CREATOR = 
+new Parcelable.Creator<Player>() {
+
+	public Player createFromParcel(Parcel in) {
+	    return new Player(in);
 	}
+
+	public Player[] newArray(int size) {
+	    return new Player[size];
+	}
+
+	};
+	
 
 }
