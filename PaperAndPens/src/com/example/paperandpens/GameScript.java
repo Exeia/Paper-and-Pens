@@ -24,12 +24,15 @@ public class GameScript extends Thread {
 	int choose;
 	boolean running;
 	int SLEEP = 2000;
-	Button b1,b2,b3,b4;
 	int count=0;
 	String TAG = StartGame.class.getSimpleName();
 	private Player pl; 
 	
 	private int [] forestArea;
+	enum areas{
+		FOREST,
+		TOWN
+	}
 	public void setRunning(boolean running)
 	{
 		this.running = running;
@@ -96,7 +99,8 @@ public class GameScript extends Thread {
 			}
 			else 
 			{
-				update(scene, state);
+				areas areas;
+				update(areas, state);
 				state = "";
 			}
 			try {
@@ -155,7 +159,7 @@ public class GameScript extends Thread {
 			return decide;
 	}
 	
-	public void update(int sit, String c)
+	public void update(areas sit, String c)
 	{
 		switch(sit)
 		{
@@ -251,7 +255,7 @@ public class GameScript extends Thread {
 			choice[1] = "Got to Armor/Weapon/Item Shop";
 			choice[2] = "Go to the Tavern";
 			choice[3] = "Go back to the forest";
-			
+			setScene(TOWN);
 		}
 		
 
