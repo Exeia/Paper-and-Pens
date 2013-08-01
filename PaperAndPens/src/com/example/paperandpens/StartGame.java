@@ -46,6 +46,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 		b4 = (Button) findViewById(R.id.choice4);
 		Intent na = getIntent();
 		Bundle ext = na.getExtras();
+		pl = ext.getParcelable("CHARACTER");
 		/*b1 = (RadioButton) findViewById(R.id.choice1);
 		b2 = (RadioButton) findViewById(R.id.choice2);
 		b3 = (RadioButton) findViewById(R.id.choice3);

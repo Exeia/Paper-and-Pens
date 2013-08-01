@@ -57,6 +57,7 @@ public class JobSelection extends Activity implements View.OnClickListener {
 			b.putInt("JOB", R.string.warrior);
 			jb.putExtras(b);
 			startActivity(jb);
+			finish();
 			break;
 		case R.id.mage:
 			job = "mage";
@@ -66,6 +67,7 @@ public class JobSelection extends Activity implements View.OnClickListener {
 			b.putInt("JOB",R.string.Mage);
 			jb.putExtras(b);
 			startActivity(jb);
+			finish();
 			break;
 		case R.id.rogue:
 			job = "rogue";
@@ -75,6 +77,7 @@ public class JobSelection extends Activity implements View.OnClickListener {
 			b.putInt("JOB",R.string.rogue);
 			jb.putExtras(b);
 			startActivity(jb);
+			finish();
 			break;
 			
 		}
