@@ -173,11 +173,21 @@ public void update()
 	String scene = gm.getScene();
 	status.setText(scene);
 	ch = gm.getChoices();
-	
-	b1.setText(ch[0]);
-	b2.setText(ch[1]);
-	b3.setText(ch[2]);
-	b4.setText(ch[3]);
+	if(gm.getBattle())
+	{
+		/*start the battle activity*/
+		Intent battle = new Intent(StartGame.this, Battle.class);
+		Bundle bd = new Bundle();
+		
+	}
+	else
+	{
+		b1.setText(ch[0]);
+		b2.setText(ch[1]);
+		b3.setText(ch[2]);
+		b4.setText(ch[3]);
+			
+	}
 	
 }
 

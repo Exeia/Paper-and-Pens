@@ -14,7 +14,6 @@ import android.widget.*;
 
 public class JobSelection extends Activity implements View.OnClickListener {
 
-	//String jobselection[] = {"Warrior","Rogue","Magi"};
 	String player ="";
 	TextView txt;
 	Button wa,ma,ti;
