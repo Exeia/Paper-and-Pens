@@ -1,5 +1,6 @@
 package com.example.paperandpens;
 
+import android.content.Intent;
 import android.util.Log;
 
 
@@ -198,6 +199,10 @@ public class GameScript extends Thread {
 			{
 			setPl_res("<Search Around>");
 			setScene("You found a sword and potion yay!!!");
+			Item sword = new Item("short sword", "It's a plain sword that you can go stabby stabby");
+			Item pots = new Item("small potion", "It has heals");
+			pl.addtoInventory(sword);
+			pl.addtoInventory(pots);
 			choice [0] = "Search around.\n";
 			choice [1] = "Sleep in a creepy yet serene forest. \n";
 			choice [2] = "Proceed straight.\n";
@@ -237,6 +242,8 @@ public class GameScript extends Thread {
 		{
 			if(count == 0)
 			{
+		
+			setPl_res("<Move Forward>");
 			setScene("You proceeded straight to where the you see a sign \'Beware\' \n");
 			choice [0] = "Proceed straight\n";
 			choice [1] = "Check Area. \n";
@@ -248,17 +255,22 @@ public class GameScript extends Thread {
 			else
 			{
 				/*place battle*/
+				setPl_res("<Move Forward>");
+
 				setScene("You see a spirit guarding a treasure \n");
 				choice [0] = "Battle on\n";
 				choice [1] = "Flee \n";
 				choice [2] = "-_-.\n";
 				choice [3] = " \n";
+				setbattle(false);
 				count++;
 				setChoice(choice);
 			}
 		}
 		else if(c.equals("Take the left turn.\n"))
 		{
+			setPl_res("<Turn Left>");
+
 			setScene("You found yourself a shortcut to town \n");
 			choice [0] = "Proceed straight on.\n";
 			choice [1] = "Check Area. \n";
@@ -269,6 +281,8 @@ public class GameScript extends Thread {
 		}
 		else if(c.equals("Proceed straight on.\n"))
 		{
+			setPl_res("<Proceed to Town>");
+
 			setScene("You have a town");
 			choice[0] = "Go to the Inn";
 			choice[1] = "Got to Armor/Weapon/Item Shop";
@@ -281,7 +295,7 @@ public class GameScript extends Thread {
 	}
 	public boolean getBattle()
 	{
-		return false;
+		return battle;
 	}
 	public void setbattle(boolean battle)
 	{
