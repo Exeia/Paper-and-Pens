@@ -1,8 +1,6 @@
 package com.example.paperandpens;
 
 import android.util.Log;
-import android.widget.Button;
-
 
 
 /*
@@ -25,14 +23,11 @@ public class GameScript extends Thread {
 	boolean running;
 	int SLEEP = 2000;
 	int count=0;
+	int FOREST = 1, TOWN = 2;
 	String TAG = StartGame.class.getSimpleName();
 	private Player pl; 
-	
-	private int [] forestArea;
-	enum areas{
-		FOREST,
-		TOWN
-	}
+	String pl_res;
+	private boolean battle ;
 	public void setRunning(boolean running)
 	{
 		this.running = running;
@@ -72,6 +67,23 @@ public class GameScript extends Thread {
 		return pl;
 		
 	}
+	public int getPlace()
+	{
+		return scene;
+	}
+	public void setPlace(int scene)
+	{
+		this.scene = scene;
+	}
+	public void setPl_res(String pl_res)
+	{
+		this.pl_res = pl_res;
+	}
+	public String getPl_res()
+	{
+		return pl_res;
+	}
+	
 	public void setChoice(String [] choice)
 	{
 		for(int i=0; i < size; i++)
@@ -84,9 +96,11 @@ public class GameScript extends Thread {
 	public void run() {
 		// TODO Auto-generated method stub
 		String state = null;
-	
-			init();
 		
+		if(isLoaded())
+		{
+			init();
+		}
 		Log.d(TAG,"In game loop...");
 		while(running)
 		{
@@ -99,8 +113,8 @@ public class GameScript extends Thread {
 			}
 			else 
 			{
-				areas areas;
-				update(areas, state);
+			
+				update(scene, state);
 				state = "";
 			}
 			try {
@@ -117,6 +131,7 @@ public class GameScript extends Thread {
 	
 	public void init()
 	{
+		pl_res = pl.getJob() + ": ...";
 		sc = "You are in the forest, there is a village a few miles away from where you are. There are two path ways, " +
 				"one going left and one going straight";
 		choice [0] = "Search around.\n";
@@ -159,7 +174,7 @@ public class GameScript extends Thread {
 			return decide;
 	}
 	
-	public void update(areas sit, String c)
+	public void update(int sit, String c)
 	{
 		switch(sit)
 		{
@@ -177,11 +192,11 @@ public class GameScript extends Thread {
 	public void forest(String c)
 	{
 		String [] choice = new String[4];
-		String checking;
 		if(c.equals("Search around.\n"))
 		{
 			if(count == 0)
 			{
+			setPl_res("<Search Around>");
 			setScene("You found a sword and potion yay!!!");
 			choice [0] = "Search around.\n";
 			choice [1] = "Sleep in a creepy yet serene forest. \n";
@@ -192,6 +207,8 @@ public class GameScript extends Thread {
 			}
 			else 
 			{
+				setPl_res("<Search Around again>");
+
 				setScene("There's nothing else around...");
 				choice [0] = "Search around your surrounding.\n";
 				choice [1] = "Sleep in a creepy yet serene forest. \n";
@@ -205,6 +222,8 @@ public class GameScript extends Thread {
 		}
 		else if (c.equals("Sleep in a creepy yet serene forest. \n"))
 		{
+			setPl_res("<Eager to sleep in the forest >");
+
 			setScene("You feel rested though you feel like someone or something watching you...");
 			choice [0] = "Search around your surrounding.\n";
 			choice [1] = "Sleep in a creepy yet serene forest. \n";
@@ -255,10 +274,18 @@ public class GameScript extends Thread {
 			choice[1] = "Got to Armor/Weapon/Item Shop";
 			choice[2] = "Go to the Tavern";
 			choice[3] = "Go back to the forest";
-			setScene(TOWN);
+			setPlace(TOWN);
 		}
 		
 
+	}
+	public boolean getBattle()
+	{
+		return false;
+	}
+	public void setbattle(boolean battle)
+	{
+		this.battle = battle;
 	}
 	public void checkedForestArea(String s, int c)
 	{
@@ -267,6 +294,25 @@ public class GameScript extends Thread {
 	
 	public void town(String ch)
 	{
-		
+		if(ch.contains("Inn"))
+		{
+			
+		}
+		else if(ch.contains("Shop"))
+		{
+			
+		}
+		else if(ch.contains("Tavern"))
+		{
+			
+		}
+		else if(ch.equals("Go back to the forest"))
+		{
+			setPlace(TOWN);
+		}
+	}
+	public boolean isLoaded()
+	{
+		return false;
 	}
 }
