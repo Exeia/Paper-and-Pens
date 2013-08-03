@@ -6,6 +6,12 @@ package com.example.paperandpens;
  *distribution of this software for license terms.
 */
 import java.util.ArrayList;
+/*
+ *Copyright 2013 Peter Keomanvianh
+ *[This program is licensed under the "GNU License"]
+ *Please see the file LICENSE in the source
+ *distribution of this software for license terms.
+*/
 
 import android.annotation.SuppressLint;
 import android.os.Parcel;
@@ -28,7 +34,7 @@ public class Player implements Parcelable {
 		jo = job;
 		this.str = str;
 		this.dex = dex;
-		this.con = cons;
+		this.con= cons;
 		this.hp = hp;
 		this.mp = mp;
 		basedmg =  (str + dex)/2;
@@ -76,10 +82,23 @@ public class Player implements Parcelable {
 	
 	}
 	
-	public void setExp(int e)
+	public void equipWeapon(Weapon w)
 	{
-		
+		basedmg = basedmg + w.getDmgInput();
 	}
+	public void unequipWeapon(Weapon w)
+	{
+		basedmg = basedmg - w.getDmgInput();
+	}
+	public void equipArmor(Armor arm)
+	{
+		con = con + arm.getArmDef() ;
+	}
+	public void unequipArmor(Armor arm)
+	{
+		con = con - arm.getArmDef() ;
+	}
+	
 	public int getStr()
 	{
 		return str;

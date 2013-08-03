@@ -29,6 +29,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 	int state = 0;
 	Player pl;
 	Random rd = new Random();
+	String PLAYER = "PLAYER", ENEMY ="ENEMY";
 	
 	private Handler hand = new Handler();
 	GameScript gm;
@@ -177,8 +178,8 @@ public void update()
 	{
 		/*start the battle activity*/
 		Intent battle = new Intent(StartGame.this, Battle.class);
-		Bundle bd = new Bundle();
 		
+		startActivity(battle);
 	}
 	else
 	{

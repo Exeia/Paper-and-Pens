@@ -262,7 +262,7 @@ public class GameScript extends Thread {
 				choice [1] = "Flee \n";
 				choice [2] = "-_-.\n";
 				choice [3] = " \n";
-				setbattle(false);
+				setbattle(true);
 				count++;
 				setChoice(choice);
 			}
