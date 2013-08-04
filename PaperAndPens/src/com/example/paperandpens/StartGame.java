@@ -71,7 +71,8 @@ public class StartGame extends Activity implements  View.OnClickListener{
 	//	while (running)
 	//	{
 		
-			gm = new GameScript();
+			gm = new GameScript(pl);
+		//	gm.setPlayer(pl);
 			status.setText(gm.getScene());
 			ch = gm.getChoices();
 			
@@ -176,17 +177,7 @@ public void update()
 	ch = gm.getChoices();
 	if(gm.getBattle())
 	{
-		try {
-			/*start the battle activity*/
-			Thread.sleep(1000);
-			Intent battle = new Intent(StartGame.this, Battle.class);
-			
-			
-			startActivity(battle);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
 		
 		
 	}
