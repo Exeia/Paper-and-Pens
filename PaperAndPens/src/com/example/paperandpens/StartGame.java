@@ -176,10 +176,19 @@ public void update()
 	ch = gm.getChoices();
 	if(gm.getBattle())
 	{
-		/*start the battle activity*/
-		Intent battle = new Intent(StartGame.this, Battle.class);
+		try {
+			/*start the battle activity*/
+			Thread.sleep(1000);
+			Intent battle = new Intent(StartGame.this, Battle.class);
+			
+			
+			startActivity(battle);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		startActivity(battle);
+		
 	}
 	else
 	{

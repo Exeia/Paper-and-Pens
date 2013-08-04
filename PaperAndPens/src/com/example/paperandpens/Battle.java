@@ -6,14 +6,18 @@ package com.example.paperandpens;
  *distribution of this software for license terms.
 */
 import java.util.ArrayList;
+/* battle system ui*/
 
 import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import java.util.*;
-public class Battle extends Activity {
-
+public class Battle extends  Activity implements  View.OnClickListener  {
 	ArrayList<Enemy> e;
 	//this needs a thread...
 	Button atk, skills, def, flee;
@@ -29,6 +33,9 @@ public class Battle extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		//setContentView(R.layout.battle);
+		Intent id = getIntent();
+		Bundle bd = id.getExtras();
+		
 		status = (TextView) findViewById(R.id.bStatus);
 		atk = (Button) findViewById(R.id.atk);
 		def = (Button) findViewById(R.id.def);
@@ -112,4 +119,22 @@ public class Battle extends Activity {
 		 
 		
 	}
+
+	
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch(v.getId())
+		{
+		case R.id.atk:
+			break;
+		case R.id.def:
+			break;
+		case R.id.flee:
+			break;
+		}
+	}
+
+	
 }

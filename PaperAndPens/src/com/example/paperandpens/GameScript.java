@@ -1,5 +1,7 @@
 package com.example.paperandpens;
 
+import java.util.ArrayList;
+
 import android.content.Intent;
 import android.util.Log;
 
@@ -29,6 +31,7 @@ public class GameScript extends Thread {
 	private Player pl; 
 	String pl_res;
 	private boolean battle ;
+	public BattleData data = null;
 	public void setRunning(boolean running)
 	{
 		this.running = running;
@@ -267,6 +270,17 @@ public class GameScript extends Thread {
 				setChoice(choice);
 			}
 		}
+		else if (c.equals("Battle on\n"))
+		{
+				if(data.getEn().isEmpty()|| data == null)
+				{
+					Enemy spirit = new Enemy("Annoying Spirit","Spirit", 2,2,2,2,100,100);
+					ArrayList<Enemy> en = new ArrayList<Enemy>();
+					en.add(spirit);
+					data = new BattleData(pl, en);
+					
+				}
+		}
 		else if(c.equals("Take the left turn.\n"))
 		{
 			setPl_res("<Turn Left>");
@@ -324,6 +338,10 @@ public class GameScript extends Thread {
 		{
 			setPlace(TOWN);
 		}
+	}
+	public BattleData getData()
+	{
+		return data;
 	}
 	public boolean isLoaded()
 	{

@@ -1,10 +1,32 @@
 Paper-and-Pens
 ===============
 
-This is a text-based adventure/rpg game in Android
+This is a simple text-based adventure/rpg game develop in Android. It has a simple job system where the user have a choice three class
+rogue, warrior, and mage. The UI is choice based so the user will choose one of the four options on given situation. It has a turn-based 
+battle much like the old JRPGs though it's not implemented to the program yet. 
+
+Things that are not implemented so far:
+- Town and Dungeon areas
+- Able to use skills
+- Battle system (not tested yet)
+- Enemy AI (maybe)
+- More classes/jobs
 
 
-This will have a tuned based battle system
+Installation
+==============
+
+
+
+Instructions 
+=============
+
+
+Contact
+===========
+
+pkeoman17@gmail.com
+
 
  Copyright (C) 2013  Peter Keomanivanh
 

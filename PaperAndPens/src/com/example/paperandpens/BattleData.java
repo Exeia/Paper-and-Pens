@@ -1,6 +1,6 @@
 package com.example.paperandpens;
 /*
- *Copyright 2013 Peter Keomanvianh
+ *Copyright (C) 2013 Peter Keomanvianh
  *[This program is licensed under the "GNU License"]
  *Please see the file LICENSE in the source
  *distribution of this software for license terms.
@@ -33,6 +33,13 @@ public class BattleData implements Parcelable{
 	public ArrayList<Enemy> getEn()
 	{
 		return en;
+	}
+	public void reset()
+	{
+		for(int i = 0; i < en.size(); i++)
+		{
+			en.remove(i);
+		}
 	}
 	@Override
 	public int describeContents() {
