@@ -61,6 +61,7 @@ public class Jobs extends Activity implements View.OnClickListener{
 			desc = " Attack opponents two times\n";
 			skillName = "Double Stab";
 			sk = new Skills(skillName, desc, false, 0,0);
+			job = "Thief";
 			StatsGen(id);
 			break;
 		case R.string.Mage:
@@ -71,7 +72,7 @@ public class Jobs extends Activity implements View.OnClickListener{
 			desc = " Shoot out one lightning bolt \n";
 			skillName = "Limited Power";
 			sk = new Skills(skillName, desc, false, 0,0);
-
+			job = "Mage";
 			StatsGen(id);
 			break;
 		case R.string.warrior:
@@ -83,7 +84,7 @@ public class Jobs extends Activity implements View.OnClickListener{
 			desc = "2x the base damage";
 			skillName = "The Mighty Blow";
 			sk = new Skills(skillName, desc, false, 0,0);
-
+			job = "Warrior";
 			StatsGen(id);
 			break;
 			

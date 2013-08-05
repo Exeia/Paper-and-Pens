@@ -1,6 +1,6 @@
 package com.example.paperandpens;
 /*
- *Copyright 2013 Peter Keomanvianh
+ *Copyright (C) 2013 Peter Keomanvianh
  *[This program is licensed under the "GNU License"]
  *Please see the file LICENSE in the source
  *distribution of this software for license terms.
@@ -22,7 +22,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 	int OPTION = 4, ONE = 1, TWO =2, THREE = 3, FOUR =4;
 	Thread t;
 	EditText cmd;
-	TextView status;
+	TextView status, response;
 	Button b1,b2,b3, b4;
 	String TAG = StartGame.class.getSimpleName();
 	String ch [] = new String[OPTION];
@@ -52,7 +52,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 		b2 = (RadioButton) findViewById(R.id.choice2);
 		b3 = (RadioButton) findViewById(R.id.choice3);
 		b4 = (RadioButton) findViewById(R.id.choice4);*/
-		
+		response = (TextView) findViewById(R.id.response);
 		status = (TextView) findViewById(R.id.start);
 		b1.setOnClickListener(this);
 		b2.setOnClickListener(this);
@@ -73,7 +73,9 @@ public class StartGame extends Activity implements  View.OnClickListener{
 		
 			gm = new GameScript(pl);
 		//	gm.setPlayer(pl);
+			
 			status.setText(gm.getScene());
+			response.setText(gm.getPl_res());
 			ch = gm.getChoices();
 			
 			b1.setText(ch[0]);
@@ -174,6 +176,7 @@ public void update()
 {
 	String scene = gm.getScene();
 	status.setText(scene);
+	response.setText(gm.getPl_res());
 	ch = gm.getChoices();
 	if(gm.getBattle())
 	{

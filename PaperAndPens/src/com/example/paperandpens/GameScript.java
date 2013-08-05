@@ -82,7 +82,7 @@ public class GameScript extends Thread {
 	}
 	public void setPl_res(String pl_res)
 	{
-		this.pl_res = pl_res;
+		this.pl_res =  pl.getName()+": "+pl_res;
 	}
 	public String getPl_res()
 	{
@@ -136,7 +136,7 @@ public class GameScript extends Thread {
 	
 	public void init()
 	{
-		//pl_res = pl.getJob() + ": ...";
+		pl_res = pl.getName() + ": ...";
 		sc = "You are in the forest, there is a village a few miles away from where you are. There are two path ways, " +
 				"one going left and one going straight";
 		choice [0] = "Search around.\n";
