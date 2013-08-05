@@ -5,6 +5,8 @@ This is a simple text-based adventure/rpg game develop in Android. It has a simp
 rogue, warrior, and mage. The UI is choice based so the user will choose one of the four options on given situation. It has a turn-based 
 battle much like the old JRPGs though it's not implemented to the program yet. 
 
+The reason is to learn Android and to have fun in working.
+
 
 Future Feature:
 ================
@@ -22,11 +24,9 @@ Installation
 
 
 
-Instructions 
-=============
 
 
-Contact
+Contact Information
 ===========
 
 pkeoman17@gmail.com
@@ -48,4 +48,6 @@ Liscense Information:
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
 For more info: https://github.com/Exeia/Paper-and-Pens/blob/master/License.txt
