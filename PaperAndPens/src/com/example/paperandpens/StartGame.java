@@ -161,8 +161,12 @@ public class StartGame extends Activity implements  View.OnClickListener{
 			
 			Log.d(TAG, choice);
 			break;
+		case R.id.Items:
+			Intent it = new Intent(StartGame.this, ItemList.class);
 			
+			break;
 		}
+		
 	}
 
 @Override
