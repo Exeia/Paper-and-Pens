@@ -280,6 +280,7 @@ public class GameScript extends Thread {
 					en.add(spirit);
 					data = new BattleData(pl, en);
 					
+					
 				}
 		}
 		else if(c.equals("Take the left turn.\n"))

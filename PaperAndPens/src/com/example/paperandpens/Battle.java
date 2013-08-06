@@ -24,6 +24,7 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 	TextView status;
 	Thread running;
 	Player person;
+	BattleData data;
 	int RANGE = 10;
 	
 	Random roll = new Random();
@@ -32,10 +33,9 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		//setContentView(R.layout.battle);
+		setContentView(R.layout.battle);
 		Intent id = getIntent();
 		Bundle bd = id.getExtras();
-		
 		status = (TextView) findViewById(R.id.bStatus);
 		atk = (Button) findViewById(R.id.atk);
 		def = (Button) findViewById(R.id.def);
@@ -43,29 +43,7 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 		flee = (Button) findViewById(R.id.flee);
 	}
 	
-	public void start()
-	{
-		status.setText("Encounter "+ e.size() + " enemies");
-		while(e.isEmpty() || person.getHp()<=0)
-			{
-				//set text indicating that is either character dies or enemy is taken care of.
-				if(e.isEmpty())
-				{
-					status.setText("All hostiles eliminated \n");
-					break;
-				}
-				else if (person.getHp() <= 0)
-				{
-					status.setText("You have died");
-					break;
-				}
-			
-			}
-		
-		
-			
-			
-		}
+	
 	
 	public void attk(Player p, Enemy e )
 	{
@@ -128,6 +106,7 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 		switch(v.getId())
 		{
 		case R.id.atk:
+			
 			break;
 		case R.id.def:
 			break;

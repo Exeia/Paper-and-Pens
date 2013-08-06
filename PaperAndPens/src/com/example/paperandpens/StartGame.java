@@ -28,10 +28,10 @@ public class StartGame extends Activity implements  View.OnClickListener{
 	String ch [] = new String[OPTION];
 	int state = 0;
 	Player pl;
+	BattleData data; 
 	Random rd = new Random();
 	String PLAYER = "PLAYER", ENEMY ="ENEMY";
 	
-	private Handler hand = new Handler();
 	GameScript gm;
 	@Override
 	
@@ -48,10 +48,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 		Intent na = getIntent();
 		Bundle ext = na.getExtras();
 		pl = ext.getParcelable("character");
-		/*b1 = (RadioButton) findViewById(R.id.choice1);
-		b2 = (RadioButton) findViewById(R.id.choice2);
-		b3 = (RadioButton) findViewById(R.id.choice3);
-		b4 = (RadioButton) findViewById(R.id.choice4);*/
+	
 		response = (TextView) findViewById(R.id.response);
 		status = (TextView) findViewById(R.id.start);
 		b1.setOnClickListener(this);
@@ -67,12 +64,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 	}
 	public void script()
 	{
-	//	boolean running = true;
-	//	while (running)
-	//	{
-		
 			gm = new GameScript(pl);
-		//	gm.setPlayer(pl);
 			
 			status.setText(gm.getScene());
 			response.setText(gm.getPl_res());
@@ -184,7 +176,9 @@ public void update()
 	ch = gm.getChoices();
 	if(gm.getBattle())
 	{
-	
+		Intent battle = new Intent (StartGame.this, Battle.class);
+		data = gm.getData();
+		battle.putExtra("BD", data);
 		
 		
 	}
