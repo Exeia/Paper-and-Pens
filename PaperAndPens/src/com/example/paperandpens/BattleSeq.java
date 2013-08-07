@@ -18,7 +18,9 @@ public class BattleSeq extends Thread {
 	final int ATTK =1, DEF =2, GTFO = 3, RANGE = 10;
 	boolean def;
 	Random roll = new Random();
-	private int defn; 
+	private int defn;
+	Player pl;
+	ArrayList<Enemy> en ;
 	public void running(boolean run)
 	{
 		this.run = run;
@@ -37,8 +39,8 @@ public class BattleSeq extends Thread {
 	public void run() {
 		// TODO Auto-generated method stub
 		//super.run();
-		Player pl = data.getPlayer();
-		ArrayList<Enemy> en = data.getEn();
+		 pl = data.getPlayer();
+		 en = data.getEn();
 		int stat= 0 ;
 		while(run)
 		{
@@ -65,7 +67,7 @@ public class BattleSeq extends Thread {
 			}
 			else
 			{
-				EnemyTurn(en.get(0));
+				EnemyTurn(pl, en.get(0));
 			}
 		}
 		
@@ -89,7 +91,7 @@ public class BattleSeq extends Thread {
 			break;
 		}
 	}
-	public void EnemyTurn(Enemy en)
+	public void EnemyTurn(Player p, Enemy en)
 	{
 		int dmg = 0, hit;
 		
@@ -98,6 +100,7 @@ public class BattleSeq extends Thread {
 		if(hit > 10 && (def == false))
 		{
 			dmg = roll.nextInt(RANGE) + en.getBased();
+			status = en.getName() +" deal "+ dmg +" damage, the " + p.getName() + "has " + p.getHp() + " left";
 		}
 		else if (hit > 10 && (def == true))
 		{
@@ -120,6 +123,7 @@ public class BattleSeq extends Thread {
 		 {
 			 dmg = (p.getStr()/2) * roll.nextInt(crit+1);
 			 e.Damaged(dmg);
+			 status = "You deal "+ dmg +" damage, the " + e.getName() + "has " + e.getHp() + " left";
 		 }
 		 else if ( hit < p.getDex()-2)
 		 {
@@ -144,7 +148,7 @@ public class BattleSeq extends Thread {
 		int toflee = roll.nextInt(RANGE);
 		if(toflee <= RANGE && toflee >= 11)
 		{
-			status = "You just got the f out there";
+			status = "(ﺧ益ﺨ) <flees away";
 			try {
 				Thread.sleep(5000);
 			} catch (InterruptedException e) {
@@ -173,5 +177,9 @@ public class BattleSeq extends Thread {
 	public void setPlayerTurn()
 	{
 		player = true;
+	}
+	public boolean isFlee()
+	{
+		return flee;
 	}
 }

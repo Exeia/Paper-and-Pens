@@ -24,6 +24,7 @@ public class GameScript extends Thread {
 	private String [] choice = new String[size];
 	int choose;
 	boolean running;
+	private boolean game_over = false;
 	int SLEEP = 2000;
 	int count=0;
 	int FOREST = 1, TOWN = 2;

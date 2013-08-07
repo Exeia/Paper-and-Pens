@@ -142,6 +142,9 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 
 	public void update()
 	{
-		
+		if(battle.isFlee())
+		{
+			
+		}
 	}
 }
