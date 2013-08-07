@@ -55,13 +55,17 @@ public class BattleSeq extends Thread {
 				stat = 2;
 				break;
 			}
+			else if(flee)
+			{
+				break;
+			}
 			if(player)
 			{
 				playerResponse(response, pl, en.get(0));
 			}
-			else if(enemy)
+			else
 			{
-				
+				EnemyTurn(en.get(0));
 			}
 		}
 		
@@ -85,8 +89,25 @@ public class BattleSeq extends Thread {
 			break;
 		}
 	}
-	public void EnemyTurn()
+	public void EnemyTurn(Enemy en)
 	{
+		int dmg = 0, hit;
+		
+		hit = roll.nextInt(RANGE);
+		
+		if(hit > 10 && (def == false))
+		{
+			dmg = roll.nextInt(RANGE) + en.getBased();
+		}
+		else if (hit > 10 && (def == true))
+		{
+			dmg = (roll.nextInt(RANGE) + en.getBased()) - defn;
+		}
+		else
+		{
+			dmg = 0;
+		}
+		setPlayerTurn();
 		
 	}
 	public void attk(Player p, Enemy e )
@@ -109,15 +130,29 @@ public class BattleSeq extends Thread {
 		 {
 			 e.Damaged(roll.nextInt(p.getBased()));
 		 }
+		
 	}
 	public void def(Player p)
 	{
 		setDef(true);
-		defn = p.getCon() + roll.nextInt(p.getCon()+10);
+		defn = p.getCon() + roll.nextInt(p.getCon()+3);
+		setEnemyTurn();
 		
 	}
 	public void flee(Player p)
 	{
+		int toflee = roll.nextInt(RANGE);
+		if(toflee <= RANGE && toflee >= 11)
+		{
+			status = "You just got the f out there";
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			flee = true;
+		}
 		
 	}
 	public void setDef(boolean def)
@@ -130,5 +165,13 @@ public class BattleSeq extends Thread {
 		return status;
 	}
 	
+	public void setEnemyTurn()
+	{
+		player = false;
 	
+	}
+	public void setPlayerTurn()
+	{
+		player = true;
+	}
 }

@@ -12,6 +12,7 @@ public class ItemList extends ListActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		
 	}
 
 	protected ListAdapter createAdapter()

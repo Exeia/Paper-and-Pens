@@ -9,8 +9,7 @@ import java.util.ArrayList;
 /* battle system ui*/
 
 import android.app.Activity;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,9 +25,9 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 	Player person;
 	BattleData data;
 	int RANGE = 10;
-	
+	BattleSeq battle;
 	Random roll = new Random();
-	
+	final int ATTACK = 1, DEFEND = 2, FLEE =3;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -36,11 +35,13 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 		setContentView(R.layout.battle);
 		Intent id = getIntent();
 		Bundle bd = id.getExtras();
+		data = bd.getParcelable("BD");
 		status = (TextView) findViewById(R.id.bStatus);
 		atk = (Button) findViewById(R.id.atk);
 		def = (Button) findViewById(R.id.def);
 		skills = (Button) findViewById(R.id.skill);
 		flee = (Button) findViewById(R.id.flee);
+		battle = new BattleSeq(data);
 	}
 	
 	
@@ -106,14 +107,41 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 		switch(v.getId())
 		{
 		case R.id.atk:
+			battle.respone(ATTACK);
+			try {
+				Thread.sleep(1000);
+				update();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			break;
 		case R.id.def:
+			battle.respone(DEFEND);
+			try {
+				Thread.sleep(1000);
+				update();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			break;
 		case R.id.flee:
+			battle.respone(FLEE);
+			try {
+				Thread.sleep(1000);
+				update();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			break;
 		}
 	}
 
-	
+	public void update()
+	{
+		
+	}
 }
