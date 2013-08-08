@@ -42,7 +42,7 @@
     android:layout_marginTop="200dp"
     android:gravity="left"
     android:text="@string/hello_world"
-    android:textSize="15sp" />
+    android:textSize="15dp" />
 
 <Button
     android:id="@+id/reroll"

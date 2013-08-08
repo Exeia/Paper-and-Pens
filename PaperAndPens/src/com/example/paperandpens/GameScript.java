@@ -31,8 +31,9 @@ public class GameScript extends Thread {
 	String TAG = StartGame.class.getSimpleName();
 	private Player pl; 
 	String pl_res;
-	private boolean battle ;
+	private boolean battle,over = false ;
 	public BattleData data = null;
+	
 	public void setRunning(boolean running)
 	{
 		this.running = running;
@@ -129,12 +130,13 @@ public class GameScript extends Thread {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			
+		
 		}
 	}
 	/* this will do setup what the user choices give a new setting*/
 	
+
+	 
 	public void init()
 	{
 		pl_res = pl.getName() + ": ...";
@@ -164,7 +166,6 @@ public class GameScript extends Thread {
 				break;
 			case 2:
 				decide = choice[1];
-				Log.d(TAG,"choice2");
 				break;
 			case 3:
 				decide = choice[2];
@@ -233,13 +234,17 @@ public class GameScript extends Thread {
 		else if (c.equals("Sleep in a creepy yet serene forest. \n"))
 		{
 			setPl_res("<Eager to sleep in the forest >");
-
-			setScene("You feel rested though you feel like someone or something watching you...");
-			choice [0] = "Search around your surrounding.\n";
-			choice [1] = "Sleep in a creepy yet serene forest. \n";
-			choice [2] = "Proceed straight.\n";
-			choice [3] = "Take the left turn. \n";
-			setChoice(choice);
+		
+				setScene("You are killed by someone or something  in your sleep");
+				choice [0] = "";
+				choice [1] = "";
+				choice [2] = "";
+				choice [3] = "";
+				setChoice(choice);
+				setOver(true);
+				
+			
+		
 			
 		}
 		
@@ -341,6 +346,14 @@ public class GameScript extends Thread {
 		{
 			setPlace(TOWN);
 		}
+	}
+	public void setOver(boolean over)
+	{
+		this.over = over;
+	}
+	public boolean isOver()
+	{
+		return over;
 	}
 	public BattleData getData()
 	{

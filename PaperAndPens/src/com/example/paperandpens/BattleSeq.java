@@ -13,7 +13,7 @@ public class BattleSeq extends Thread {
 
 	private String status; 
 	BattleData data;
-	boolean run, player = true, enemy= false, flee = false;
+	boolean run, player = true, enemy= false, flee = false, over = false;
 	int response = 0;
 	final int ATTK =1, DEF =2, GTFO = 3, RANGE = 10;
 	boolean def;
@@ -181,5 +181,9 @@ public class BattleSeq extends Thread {
 	public boolean isFlee()
 	{
 		return flee;
+	}
+	public boolean isOver()
+	{
+		return over;
 	}
 }

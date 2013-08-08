@@ -20,7 +20,7 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 	ArrayList<Enemy> e;
 	//this needs a thread...
 	Button atk, skills, def, flee;
-	TextView status;
+	TextView status, enemy_status;
 	Thread running;
 	Player person;
 	BattleData data;
@@ -142,9 +142,17 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 
 	public void update()
 	{
-		if(battle.isFlee())
+		if(battle.isFlee()|| battle.isOver())
 		{
-			
+			status.setText(battle.getStatus());
+			battle.running(false);
 		}
-	}
+		
+		else 
+		{
+			status.setText(battle.getStatus());
+			enemy_status.setText(battle.getStatus());
+		
+		}
+		}
 }

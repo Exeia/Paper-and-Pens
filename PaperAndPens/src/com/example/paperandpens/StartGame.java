@@ -181,6 +181,13 @@ public void update()
 		
 		
 	}
+	else if(gm.isOver())
+	{
+		Log.d(TAG, "Game over");
+		Intent over = new Intent (StartGame.this, GameOver.class);
+		startActivity(over);
+		this.finish();
+	}
 	else
 	{
 		b1.setText(ch[0]);
@@ -191,6 +198,7 @@ public void update()
 	}
 	
 }
+
 
 public boolean isLoaded()
 {

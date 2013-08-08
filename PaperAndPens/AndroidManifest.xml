@@ -51,6 +51,10 @@
             android:name="com.example.paperandpens.Battle"
             android:label="@string/app_name" >
         </activity>
+         <activity
+            android:name="com.example.paperandpens.GameOver"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
