@@ -12,6 +12,7 @@ import android.app.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 	ArrayList<Enemy> e;
 	//this needs a thread...
 	Button atk, skills, def, flee;
+	String TAG = Battle.class.getSimpleName();
 	TextView status, enemy_status;
 	Thread running;
 	Player person;
@@ -155,4 +157,24 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 		
 		}
 		}
+
+
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		Log.d(TAG, "Resuming battle");
+	}
+
+
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		Log.d(TAG, "Pausing battle");
+	}
+	
+	
 }

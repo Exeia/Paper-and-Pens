@@ -36,8 +36,8 @@ public class GameOver extends Activity{
 				// TODO Auto-generated method stub
 				String tag = "Game over";
 				Log.d(tag , "going main menu");
-				Intent start = new Intent(GameOver.this, Welcome.class);
-				startActivity(start);
+		//		Intent start = new Intent(GameOver.this, Welcome.class);
+		//		startActivity(start);
 				finish();
 			}
 		});

@@ -26,7 +26,7 @@ public class GameScript extends Thread {
 	boolean running;
 	private boolean game_over = false;
 	int SLEEP = 2000;
-	int count=0;
+	int count=0, forest_count =0;
 	int FOREST = 1, TOWN = 2;
 	String TAG = StartGame.class.getSimpleName();
 	private Player pl; 
@@ -130,7 +130,7 @@ public class GameScript extends Thread {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		
+			choose =0;
 		}
 	}
 	/* this will do setup what the user choices give a new setting*/
@@ -162,7 +162,7 @@ public class GameScript extends Thread {
 			{
 			case 1:
 				decide = choice[0];
-				Log.d(TAG,decide);
+				Log.d(TAG,"bugg.....");
 				break;
 			case 2:
 				decide = choice[1];
@@ -250,35 +250,39 @@ public class GameScript extends Thread {
 		
 		else if(c.equals("Proceed straight.\n"))
 		{
-			if(count == 0)
+			if(forest_count == 0)
 			{
 		
 			setPl_res("<Move Forward>");
 			setScene("You proceeded straight to where the you see a sign \'Beware\' \n");
-			choice [0] = "Proceed straight\n";
+			choice [0] = "Proceed straight (2)\n";
 			choice [1] = "Check Area. \n";
 			choice [2] = "-_-.\n";
 			choice [3] = " \n";
-			count++;
+			forest_count++;
 			setChoice(choice);
 			}
 			else
 			{
-				/*place battle*/
-				setPl_res("<Move Forward>");
-
-				setScene("You see a spirit guarding a treasure \n");
-				choice [0] = "Battle on\n";
-				choice [1] = "Flee \n";
-				choice [2] = "-_-.\n";
-				choice [3] = " \n";
-				setbattle(true);
-				count++;
-				setChoice(choice);
+				
 			}
 		}
-		else if (c.equals("Battle on\n"))
+		else if (c.equals("Proceed straight (2)\n"))
 		{
+			/*place battle*/
+			setPl_res("<Move Forward>");
+			setScene("You see a spirit guarding a treasure \n");
+			choice [0] = "Battle\n";
+			choice [1] = "Flee \n";
+			choice [2] = "-_-.\n";
+			choice [3] = "";
+			
+			count++;
+			setChoice(choice);
+		}
+		else if (c.equals("Battle\n"))
+		{
+			setbattle(true);
 				if(data.getEn().isEmpty()|| data == null)
 				{
 					Enemy spirit = new Enemy("Annoying Spirit","Spirit", 2,2,2,2,100,100);
