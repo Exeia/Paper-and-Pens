@@ -175,9 +175,20 @@ public void update()
 	ch = gm.getChoices();
 	if(gm.getBattle())
 	{
-		Intent battle = new Intent (StartGame.this, Battle.class);
 		data = gm.getData();
-		battle.putExtra("BD", data);
+		if (data == null)
+		{
+			Log.d(TAG, "no data");
+		}
+		else
+		{
+			Intent battle = new Intent (StartGame.this, Battle.class);
+			
+			Log.d(TAG, "battle data implement");
+			battle.putExtra("BD", data);	
+			startActivity(battle);
+		}
+		
 		
 		
 	}

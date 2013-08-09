@@ -283,15 +283,14 @@ public class GameScript extends Thread {
 		else if (c.equals("Battle\n"))
 		{
 			setbattle(true);
-				if(data.getEn().isEmpty()|| data == null)
-				{
+				
 					Enemy spirit = new Enemy("Annoying Spirit","Spirit", 2,2,2,2,100,100);
 					ArrayList<Enemy> en = new ArrayList<Enemy>();
 					en.add(spirit);
 					data = new BattleData(pl, en);
 					
 					
-				}
+				
 		}
 		else if(c.equals("Take the left turn.\n"))
 		{
