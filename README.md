@@ -21,7 +21,9 @@ Things that are not implemented so far:
 
 Installation
 ==============
+USER DOCUMENTS:  https://github.com/Exeia/Paper-and-Pens/blob/master/UserDoc.txt
 
+DEV DOCUMENTS: https://github.com/Exeia/Paper-and-Pens/blob/master/DevDoc.txt
 
 
 
