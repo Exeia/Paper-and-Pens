@@ -148,7 +148,7 @@ public class BattleSeq extends Thread {
 		int toflee = roll.nextInt(RANGE);
 		if(toflee <= RANGE && toflee >= 11)
 		{
-			status = "(ﺧ益ﺨ) <flees away";
+			status = "(ﺧ益ﺨ) <flees away>";
 			try {
 				Thread.sleep(5000);
 			} catch (InterruptedException e) {

@@ -176,7 +176,7 @@ public void update()
 	if(gm.getBattle())
 	{
 		data = gm.getData();
-		if (data == null)
+		if (data.getEn().isEmpty())
 		{
 			Log.d(TAG, "no data");
 		}
@@ -185,7 +185,8 @@ public void update()
 			Intent battle = new Intent (StartGame.this, Battle.class);
 			
 			Log.d(TAG, "battle data implement");
-			battle.putExtra("BD", data);	
+			battle.putParcelableArrayListExtra("en", gm.getEn() );
+			battle.putExtra("PL", pl);
 			startActivity(battle);
 		}
 		

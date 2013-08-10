@@ -30,6 +30,7 @@ public class GameScript extends Thread {
 	int FOREST = 1, TOWN = 2;
 	String TAG = StartGame.class.getSimpleName();
 	private Player pl; 
+	ArrayList<Enemy> en;
 	String pl_res;
 	private boolean battle,over = false ;
 	public BattleData data = null;
@@ -285,9 +286,9 @@ public class GameScript extends Thread {
 			setbattle(true);
 				
 					Enemy spirit = new Enemy("Annoying Spirit","Spirit", 2,2,2,2,100,100);
-					ArrayList<Enemy> en = new ArrayList<Enemy>();
+					en = new ArrayList<Enemy>();
 					en.add(spirit);
-					data = new BattleData(pl, en);
+					Log.d(TAG,"getting data");
 					
 					
 				
@@ -365,5 +366,9 @@ public class GameScript extends Thread {
 	public boolean isLoaded()
 	{
 		return false;
+	}
+	public ArrayList<Enemy> getEn()
+	{
+		return en;
 	}
 }

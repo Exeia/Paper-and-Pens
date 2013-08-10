@@ -1,0 +1,7 @@
+1. Download and Install Android SDK and Android USB driver (for windows)
+2. Download the PaperandPen.zip file from github
+3. Unzip the PaperAndPen.zip file
+4. Find the PaperAndPens.apk file in PaperAndPens/bin/PaperAndPens.apk
+5. Connect the android device to the computer. Be sure enable USB debugging on the device. To do that go to Settings>Developer Option.
+6. On the command prompt or terminal use the follown command "adb install <path>/PaperAndPens.apk.
+7. Ready to go on Android Device. 

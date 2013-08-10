@@ -12,6 +12,7 @@ import android.app.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -25,7 +26,7 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 	TextView status, enemy_status;
 	Thread running;
 	Player person;
-	BattleData data;
+	ArrayList<Enemy> data;
 	int RANGE = 10;
 	BattleSeq battle;
 	Random roll = new Random();
@@ -37,13 +38,18 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 		setContentView(R.layout.battle);
 		Intent id = getIntent();
 		Bundle bd = id.getExtras();
-		data = bd.getParcelable("BD");
+		data = bd.getParcelableArrayList("en");
+		Log.d(TAG, data.get(0).getName());
+		person = bd.getParcelable("PL");
 		status = (TextView) findViewById(R.id.bStatus);
 		atk = (Button) findViewById(R.id.atk);
 		def = (Button) findViewById(R.id.def);
 		skills = (Button) findViewById(R.id.skill);
 		flee = (Button) findViewById(R.id.flee);
-		battle = new BattleSeq(data);
+		
+		//status.setText("You encounter, " + data.getEn().get(0).getName());
+	
+	
 	}
 	
 	
