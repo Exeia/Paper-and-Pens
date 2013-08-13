@@ -25,8 +25,15 @@ USER DOCUMENTS:  https://github.com/Exeia/Paper-and-Pens/blob/master/UserDoc.txt
 
 DEV DOCUMENTS: https://github.com/Exeia/Paper-and-Pens/blob/master/DevDoc.txt
 
+The Binary file:
+================
+Binary file is located in: https://github.com/Exeia/Paper-and-Pens/blob/master/PaperAndPens/bin/PaperAndPens.apk
 
 
+Stable Version:
+================
+
+https://github.com/Exeia/Paper-and-Pens/releases/tag/v0.1A
 
 Contact Information
 ===========
