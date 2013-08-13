@@ -30,6 +30,10 @@ The Binary file:
 Binary file is located in: https://github.com/Exeia/Paper-and-Pens/blob/master/PaperAndPens/bin/PaperAndPens.apk
 
 
+Repository:
+==============
+Link to the repository: https://github.com/Exeia/Paper-and-Pens
+
 Stable Version:
 ================
 
