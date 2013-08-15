@@ -37,6 +37,7 @@ Link to the repository: https://github.com/Exeia/Paper-and-Pens
 Stable Version:
 ================
 
+(08/15/2013)
 https://github.com/Exeia/Paper-and-Pens/releases/tag/v0.1A
 
 Contact Information
