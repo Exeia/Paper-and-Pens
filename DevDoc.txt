@@ -1,12 +1,12 @@
-1. Require in order to build. It requires jdk 5 and jdk 6 available at http://www.oracle.com/technetwork/java/javaee/downloads/java-ee-sdk-6u3-jdk-6u29-downloads-523388.html. Also need eclipse ide, http://www.eclipse.org/downloads/ and the eclipse Adt pluglin instruction given in http://developer.android.com/sdk/installing/installing-adt.html. 
+1. Requirement in order to build. It requires jdk 5 and jdk 6 available at http://www.oracle.com/technetwork/java/javaee/downloads/java-ee-sdk-6u3-jdk-6u29-downloads-523388.html. Also need eclipse ide, http://www.eclipse.org/downloads/ and the eclipse Adt pluglin instruction given in http://developer.android.com/sdk/installing/installing-adt.html. 
 2. Download and Install Android SDK from this website: http://developer.android.com/sdk/index.html
 3. Open the Android SDk Manager and choose Available Package by clinking the checkbox and install it.
 4. Create an Android virtual device: Open up Eclipse then goto Window > Android SDK and AVD Manager. Then goto Virtual Device and click New.
-Then create a new AVD and type the name of the new AVD. Finally click create AVD.
+Then create a new AVD and type the name of the new AVD and customize it. Finally click create AVD.
 5. Clone the repository:
 	cd <path directory>
 	git remote add origin git@github.com:Exeia/Paper-and-Pens.git
 	git clone git@github.com:Exeia/Paper-and-Pens.git
 6. In Eclipse, goto File > Import > Existing Project and then select the PaperAndPens directory.
-7. Click and Run to run the android application. 
+7. Click and Run to run the android application and build when need it. 
  
