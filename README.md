@@ -16,6 +16,7 @@ Things that are not implemented so far:
 - Able to use skills
 - Battle system (not tested yet)
 - Enemy AI (maybe)
+- Item and Inventory system
 - More classes/jobs
 - Save/Load feature
 
@@ -29,9 +30,27 @@ Requirements:
 
 Instruction for installing the app and building the app:
 
-USER DOCUMENTS/Installation:  https://github.com/Exeia/Paper-and-Pens/blob/master/UserDoc.txt
+Installation Instruction:  https://github.com/Exeia/Paper-and-Pens/blob/master/UserDoc.txt
 
-DEV DOCUMENTS/Build: https://github.com/Exeia/Paper-and-Pens/blob/master/DevDoc.txt
+Build Instruction: https://github.com/Exeia/Paper-and-Pens/blob/master/DevDoc.txt
+
+
+User Instruction:
+==================
+
+0. Follow the Installation instruction to install the app.  
+1. Click or touch 'New Game.' The load feature is not implemented.
+2. Create a name of character and click/touch 'submit.'
+3. Select job class either a thief, mage, or warrior.
+4. Click or touch 'Next' button for confirmation of player's stats. If not statify with the stats then click/touch 'ReRoll' until statify with the stats.
+5. The game starts and have to select one of four choices to interact the environment. 
+6. If battle (not fixed yet) occurs there's four choices attack, defend, skills(not implemented), and flee this is a turn-based battle system:
+	- attack: attack enemy
+	- defend: defend enemy attacks
+	- skills: use player skills 
+	- flee: run away from battle
+
+
 
 The Binary file:
 ================
