@@ -26,7 +26,7 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 	TextView status, enemy_status;
 	Thread running;
 	Player person;
-	ArrayList<Enemy> data;
+	Enemy data;
 	int RANGE = 10;
 	BattleSeq battle;
 	Random roll = new Random();
@@ -38,9 +38,11 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 		setContentView(R.layout.battle);
 		Intent id = getIntent();
 		Bundle bd = id.getExtras();
-		data = bd.getParcelableArrayList("en");
-		Log.d(TAG, data.get(0).getName());
+		//data = bd.getParcelableArrayList("en");
+		//data = bd.getParcelable("en");
+		//Log.d(TAG, data.get(0).getName());
 		person = bd.getParcelable("PL");
+        data = person.getEnemy();
 		status = (TextView) findViewById(R.id.bStatus);
 		atk = (Button) findViewById(R.id.atk);
 		def = (Button) findViewById(R.id.def);
@@ -63,16 +65,16 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 		 if(hit >= p.getDex() )
 		 {
 			 dmg = (p.getStr()/2) * roll.nextInt(crit+1);
-			 e.Damaged(dmg);
+			 e.setHp(dmg);
 		 }
 		 else if ( hit < p.getDex()-2)
 		 {
 			 dmg =0;
-			 e.Damaged(dmg);
+			 e.setHp(dmg);
 		 }
 		 else 
 		 {
-			 e.Damaged(roll.nextInt(p.getBased()));
+			 e.setHp(roll.nextInt(p.getBased()));
 		 }
 		 
 		
@@ -83,29 +85,7 @@ public class Battle extends  Activity implements  View.OnClickListener  {
 	{
 		
 	}
-	public void enemyAtk(Enemy e)
-	{
-		int dmg =0, hit ; 
-		 int crit = 3;
-		 hit = (roll.nextInt(e.getDex()/RANGE) + e.getDex())/ 3;
-		 /* critical hit */
-		 if(hit >= e.getDex() )
-		 {
-			 dmg = (e.getStr()/2) * roll.nextInt(crit+1);
-			 e.Damaged(dmg);
-		 }
-		 else if ( hit < e.getDex()-2)
-		 {
-			 dmg =0;
-			 e.Damaged(dmg);
-		 }
-		 else 
-		 {
-			 e.Damaged(roll.nextInt(e.getBased()));
-		 }
-		 
-		
-	}
+
 
 	
 

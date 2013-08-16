@@ -1,6 +1,7 @@
 package com.example.paperandpens;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import android.content.Intent;
 import android.util.Log;
@@ -26,14 +27,17 @@ public class GameScript extends Thread {
 	boolean running;
 	private boolean game_over = false;
 	int SLEEP = 2000;
-	int count=0, forest_count =0;
+	int count=0, forest_count =0, defn;
 	int FOREST = 1, TOWN = 2;
 	String TAG = StartGame.class.getSimpleName();
 	private Player pl; 
-	ArrayList<Enemy> en;
+	private Enemy en;
 	String pl_res;
 	private boolean battle,over = false ;
 	public BattleData data = null;
+    private boolean player_turn = true,def;
+    public final int RANGE = 20;
+
 	
 	public void setRunning(boolean running)
 	{
@@ -119,6 +123,12 @@ public class GameScript extends Thread {
 				continue;
 				
 			}
+            else if(battle == true)
+            {
+
+                battleUpdate(state);
+                state = "";
+            }
 			else 
 			{
 			
@@ -285,11 +295,15 @@ public class GameScript extends Thread {
 		{
 			setbattle(true);
 				
-					Enemy spirit = new Enemy("Annoying Spirit","Spirit", 2,2,2,2,100,100);
-					en = new ArrayList<Enemy>();
-					en.add(spirit);
-					Log.d(TAG,"getting data");
+					Enemy spirit = new Enemy("Annoying Spirit", 2,2,2,100,100);
 					
+					en = spirit;
+                    choice[0] = "Attack";
+                    choice[1] = "Defend";
+                    choice[2] = "GTFO";
+                    choice[3] = "Skills";
+					Log.d(TAG,"getting data");
+
 					
 				
 		}
@@ -319,10 +333,7 @@ public class GameScript extends Thread {
 		
 
 	}
-	public boolean getBattle()
-	{
-		return battle;
-	}
+
 	public void setbattle(boolean battle)
 	{
 		this.battle = battle;
@@ -336,7 +347,7 @@ public class GameScript extends Thread {
 	{
 		if(ch.contains("Inn"))
 		{
-			
+
 		}
 		else if(ch.contains("Shop"))
 		{
@@ -367,8 +378,117 @@ public class GameScript extends Thread {
 	{
 		return false;
 	}
-	public ArrayList<Enemy> getEn()
+	public  Enemy getEn()
 	{
 		return en;
 	}
+
+    public void battleSeq()
+    {
+
+         if(pl.getHp() != 0 || en.getHp() ==0)
+         {
+
+                  Player_turn();
+
+                  Enemy_turn();
+
+         }
+        else
+         {
+             setbattle(false);
+         }
+    }
+    public void Enemy_turn()
+    {
+
+        Random roll = new Random();
+        int dmg = 0, hit;
+
+        hit = roll.nextInt(RANGE);
+
+        if(hit > 10 && (def == false))
+        {
+            dmg = roll.nextInt(RANGE) + en.getAtk();
+            setScene( en.getName() +" deal "+ dmg +" damage, the " + pl.getName() + "has " + pl.getHp() + " left");
+        }
+        else if (hit > 10 && (def == true))
+        {
+            dmg = (roll.nextInt(RANGE) + en.getAtk()) - defn;
+        }
+        else
+        {
+            dmg = 0;
+        }
+    }
+    public void Player_turn()
+    {
+        Random roll  = new Random();
+        int dmg =0, hit ;
+        int crit = 3;
+        hit = roll.nextInt(pl.getDex());
+		 /* critical hit */
+        if(hit >= (pl.getDex()/2))
+        {
+            dmg = (pl.getStr()/2) * roll.nextInt(crit+1);
+            en.setHp(dmg);
+            setScene( "You deal "+ dmg +" damage, the " + en.getName() + "has " + en.getHp() + " left");
+        }
+        else if ( hit < (pl.getDex()/2)  )
+        {
+            dmg =0;
+            en.setHp(dmg);
+        }
+        else
+        {
+            en.setHp(roll.nextInt(pl.getBased()));
+        }
+    }
+
+    public void battleUpdate(String state)
+    {
+
+
+
+        if(state.equals(choice[0]))
+        {
+            battleSeq();
+        }
+        else if(state.equals(choice[1]))
+        {
+            Defend();
+        }
+        else if (state.equals(choice[2]))
+        {
+               Flee();
+        }
+        else
+        {
+            choice[0] = "Attack";
+            choice[1] = "Defend";
+            choice[2] = "GTFO";
+            choice[3] = "Skills";
+        }
+
+    }
+
+    public void Defend()
+    {
+        Random roll = new Random();
+        setDef(true);
+        defn = pl.getCon() + roll.nextInt(pl.getCon()+3);
+        Enemy_turn();
+    }
+    public void Flee()
+    {
+
+    }
+    public boolean getBattle()
+    {
+        return battle;
+    }
+    public void setDef(boolean def)
+    {
+        this.def = def;
+    }
 }

@@ -24,6 +24,8 @@ public class Player implements Parcelable {
 	private String na, jo;
 	//stats
 	private int str,mag,dex,con,hp,mp, basedmg, exp;
+    private Enemy en;
+    private ArrayList <Enemy> enemy = new ArrayList<Enemy> ();
 	//skill list
 	private ArrayList <Skills> ch_skill = new ArrayList<Skills>();
 	//item inventory
@@ -57,7 +59,10 @@ public class Player implements Parcelable {
 		dex = input.readInt();
 		con = input.readInt();
 		hp = input.readInt();
-		
+        if(en != null)
+        {
+            en = input.readParcelable(Enemy.class.getClassLoader());
+        }
 	}
 	public boolean isLevelup()
 	{
@@ -192,6 +197,26 @@ public class Player implements Parcelable {
 		}
 		return found;
 	}
+    public void addenemy(Enemy e)
+    {
+        enemy.add(e);
+    }
+    public Enemy getEn(int i)
+    {
+            return enemy.get(i);
+    }
+    public Enemy getEnemy()
+    {
+        return en;
+    }
+    public void setEne(Enemy e)
+    {
+        en = e;
+    }
+    public ArrayList <Enemy> getEn()
+    {
+             return enemy;
+    }
 	public void addtoInventory(Item i)
 	{
 		inventory.add(i);
@@ -214,6 +239,7 @@ public class Player implements Parcelable {
 		out.writeInt(getCon());
 		out.writeInt(getHp());
 		out.writeInt(getMp());
+
 	}	
 public static final Parcelable.Creator<Player> CREATOR = 
 new Parcelable.Creator<Player>() {

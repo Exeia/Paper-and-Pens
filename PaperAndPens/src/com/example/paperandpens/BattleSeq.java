@@ -6,10 +6,9 @@ package com.example.paperandpens;
  *distribution of this software for license terms.
 */
 
-import java.util.ArrayList;
 import java.util.Random;
 
-public class BattleSeq extends Thread {
+public class BattleSeq  {
 
 	private String status; 
 	BattleData data;
@@ -20,58 +19,22 @@ public class BattleSeq extends Thread {
 	Random roll = new Random();
 	private int defn;
 	Player pl;
-	ArrayList<Enemy> en ;
+	Enemy en ;
 	public void running(boolean run)
 	{
 		this.run = run;
 	}
-	public BattleSeq(BattleData data)
+	public BattleSeq(Player pl, Enemy en)
 	{
-		this.data = data;
+		this.pl = pl;
+		this.en = en;
 		status = "";
-		init();
+
 	}
-	public void init()
-	{
-		run();
-	}
-	@Override
-	public void run() {
+
 		// TODO Auto-generated method stub
-		//super.run();
-		 pl = data.getPlayer();
-		 en = data.getEn();
-		int stat= 0 ;
-		while(run)
-		{
-			//set text indicating that is either character dies or enemy is taken care of.
-			if(en.isEmpty())
-			{
-				status = "";
-				stat = 1;
-				break;
-			}
-			else if (pl.getHp() <= 0)
-			{
-				status = "";
-				stat = 2;
-				break;
-			}
-			else if(flee)
-			{
-				break;
-			}
-			if(player)
-			{
-				playerResponse(response, pl, en.get(0));
-			}
-			else
-			{
-				EnemyTurn(pl, en.get(0));
-			}
-		}
-		
-	}
+
+
 	public void respone(int response)
 	{
 		this.response = response;
@@ -99,18 +62,18 @@ public class BattleSeq extends Thread {
 		
 		if(hit > 10 && (def == false))
 		{
-			dmg = roll.nextInt(RANGE) + en.getBased();
+			dmg = roll.nextInt(RANGE) + en.getAtk();
 			status = en.getName() +" deal "+ dmg +" damage, the " + p.getName() + "has " + p.getHp() + " left";
 		}
 		else if (hit > 10 && (def == true))
 		{
-			dmg = (roll.nextInt(RANGE) + en.getBased()) - defn;
+			dmg = (roll.nextInt(RANGE) + en.getAtk()) - defn;
 		}
 		else
 		{
 			dmg = 0;
 		}
-		setPlayerTurn();
+		//setPlayerTurn();
 		
 	}
 	public void attk(Player p, Enemy e )
@@ -122,17 +85,17 @@ public class BattleSeq extends Thread {
 		 if(hit >= p.getDex() )
 		 {
 			 dmg = (p.getStr()/2) * roll.nextInt(crit+1);
-			 e.Damaged(dmg);
+			 e.setHp(dmg);
 			 status = "You deal "+ dmg +" damage, the " + e.getName() + "has " + e.getHp() + " left";
 		 }
 		 else if ( hit < p.getDex()-2)
 		 {
 			 dmg =0;
-			 e.Damaged(dmg);
+			 e.setHp(dmg);
 		 }
 		 else 
 		 {
-			 e.Damaged(roll.nextInt(p.getBased()));
+			 e.setHp(roll.nextInt(p.getBased()));
 		 }
 		
 	}

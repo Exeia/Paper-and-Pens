@@ -6,16 +6,93 @@ package com.example.paperandpens;
  *distribution of this software for license terms.
 */
 import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.Log;
 
-public class Enemy extends Player {
+public class Enemy implements Parcelable{
 
-	public Enemy(String name, String job, int str, int mag, int dex, int cons,
-			int hp, int mp) {
-		super(name, job, str, mag, dex, cons, hp, mp);
-		// TODO Auto-generated constructor stub
-	}
-	public Enemy(Parcel p)
-	{
-		super(p);
-	}
+    private String name;
+    String tag = Enemy.class.getSimpleName();
+    private int hp,mp,atk,def,dex;
+    public Enemy(String name, int hp, int mp, int atk, int def, int dex)
+    {
+        this.name = name;
+        this.atk = atk;
+        this.def = def;
+        this.dex = dex;
+        this.hp = hp;
+        this.mp = mp;
+    }
+     public Enemy(Parcel in)
+     {
+         name = in.readString();
+         atk = in.readInt();
+         def = in.readInt();
+         dex = in.readInt();
+         hp = in.readInt();
+         mp = in.readInt();
+
+     }
+    public String getName()
+    {
+        return name;
+    }
+
+    public int getHp()
+    {
+        return hp;
+    }
+
+    public int getMp()
+    {
+        return mp;
+    }
+
+    public int getAtk()
+    {
+        return atk;
+    }
+
+    public int getDef()
+    {
+        return def;
+    }
+    public int getDex()
+    {
+        return dex;
+    }
+
+    public void setHp(int hp)
+    {
+        this.hp = this.hp - hp;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void writeToParcel(Parcel out, int i) {
+
+        out.writeString(getName());
+        out.writeInt(getAtk());
+        out.writeInt(getDef());
+        out.writeInt(getDex());
+        out.writeInt(getHp());
+        out.writeInt(getMp());
+    }
+    public static final Parcelable.Creator<Enemy> CREATOR =
+            new Parcelable.Creator<Enemy>() {
+
+                public Enemy createFromParcel(Parcel in) {
+                    return new Enemy(in);
+                }
+
+                public Enemy[] newArray(int size) {
+                    return new Enemy[size];
+                }
+
+            };
+
 }

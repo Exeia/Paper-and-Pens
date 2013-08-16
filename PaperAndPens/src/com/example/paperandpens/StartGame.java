@@ -27,7 +27,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 	String ch [] = new String[OPTION];
 	int state = 0;
 	Player pl;
-	BattleData data; 
+	Enemy data; 
 	Random rd = new Random();
 	String PLAYER = "PLAYER", ENEMY ="ENEMY";
 	
@@ -58,7 +58,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 		{
 			script();
 		}
-		
+
 		
 	}
 	public void script()
@@ -175,22 +175,20 @@ public void update()
 	ch = gm.getChoices();
 	if(gm.getBattle())
 	{
-		data = gm.getData();
-		if (data.getEn().isEmpty())
+		data = gm.getEn();
+		if (data == null )
 		{
 			Log.d(TAG, "no data");
 		}
 		else
 		{
-			Intent battle = new Intent (StartGame.this, Battle.class);
-			
-			Log.d(TAG, "battle data implement");
-			battle.putParcelableArrayListExtra("en", gm.getEn() );
-			battle.putExtra("PL", pl);
-			startActivity(battle);
+            b1.setText(ch[0]);
+            b2.setText(ch[1]);
+            b3.setText(ch[2]);
+            b4.setText(ch[3]);
 		}
-		
-		
+
+
 		
 	}
 	else if(gm.isOver())
