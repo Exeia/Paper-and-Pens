@@ -19,11 +19,17 @@ Things that are not implemented so far:
 - More classes/jobs
 - Save/Load feature
 
-Installation
+Installation/Build Instruction
 ==============
-USER DOCUMENTS:  https://github.com/Exeia/Paper-and-Pens/blob/master/UserDoc.txt
 
-DEV DOCUMENTS: https://github.com/Exeia/Paper-and-Pens/blob/master/DevDoc.txt
+Requirements:
+- android sdk
+- eclipse ide
+- jdk 5 and 6
+
+USER DOCUMENTS/Installation:  https://github.com/Exeia/Paper-and-Pens/blob/master/UserDoc.txt
+
+DEV DOCUMENTS/Build: https://github.com/Exeia/Paper-and-Pens/blob/master/DevDoc.txt
 
 The Binary file:
 ================
@@ -64,4 +70,4 @@ Liscense Information:
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-For more info: https://github.com/Exeia/Paper-and-Pens/blob/master/License.txt
+For more info about license: https://github.com/Exeia/Paper-and-Pens/blob/master/License.txt
