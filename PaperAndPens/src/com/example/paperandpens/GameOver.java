@@ -10,9 +10,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 /*
- *Copyright (C) 2013 Peter Keomanvianh
+ *Copyright (C)2013 Peter Keomanvianh
  *[This program is licensed under the "GNU License"]
- *Please see the file LICENSE in the source
+ *Please see the file LICENSE in https://github.com/Exeia/Paper-and-Pens/blob/master/License.txt
+ *or in the source
  *distribution of this software for license terms.
 */
 /*game over screen*/

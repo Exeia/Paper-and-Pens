@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+
+ 
+ *Copyright (C)2013 Peter Keomanvianh
+ *[This program is licensed under the "GNU License"]
+ *Please see the file LICENSE in https://github.com/Exeia/Paper-and-Pens/blob/master/License.txt
+ *or in the source
+ *distribution of this software for license terms.
+
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.paperandpens"
     android:versionCode="1"

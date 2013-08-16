@@ -8,9 +8,10 @@ import android.util.Log;
 
 
 /*
- *Copyright 2013 Peter Keomanvianh
+ *Copyright (C)2013 Peter Keomanvianh
  *[This program is licensed under the "GNU License"]
- *Please see the file LICENSE in the source
+ *Please see the file LICENSE in https://github.com/Exeia/Paper-and-Pens/blob/master/License.txt
+ *or in the source
  *distribution of this software for license terms.
 */
 
@@ -426,7 +427,7 @@ public class GameScript extends Thread {
         if(hit > 10 && (def == false))
         {
             dmg = roll.nextInt(RANGE) + en.getAtk();
-            setScene( en.getName() +" deal "+ dmg +" damage, the " + pl.getName() + "has " + pl.getHp() + " left");
+            setScene( en.getName() +" deal "+ dmg +" damage, the " + pl.getName() + "has  " + pl.getHp() + " left");
         }
         else if (hit > 10 && (def == true))
         {
