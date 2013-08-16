@@ -73,7 +73,7 @@ https://github.com/Exeia/Paper-and-Pens/releases/tag/v0.1A
 
 Contact Information
 ===========
-
+For any question or information contact my e-mail at:
 pkeoman17@gmail.com
 
 Liscense Information:

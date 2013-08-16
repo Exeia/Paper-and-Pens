@@ -117,30 +117,30 @@ public class GameScript extends Thread {
 		while(running)
 		{
 			/*want to get input*/
-			state = getInput(choose);
-			if(state.equals(""))
-			{
-				continue;
-				
-			}
-            else if(battle == true)
-            {
+            try {
+                Thread.sleep(SLEEP);
+                state = getInput(choose);
+                if(state.equals(""))
+                {
+                    continue;
 
-                battleUpdate(state);
-                state = "";
+                }
+                else if(battle == true)
+                {
+
+                    battleUpdate(state);
+
+                }
+                else
+                {
+
+                    update(scene, state);
+
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
-			else 
-			{
-			
-				update(scene, state);
-				state = "";
-			}
-			try {
-				Thread.sleep(SLEEP); 	
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+             state = "";
 			choose =0;
 		}
 	}
@@ -296,8 +296,10 @@ public class GameScript extends Thread {
 			setbattle(true);
 				
 					Enemy spirit = new Enemy("Annoying Spirit", 2,2,2,100,100);
-					
+
 					en = spirit;
+                    setPl_res("<What will you do?>");
+                    setScene("You've encounter an  "+ en.getName() + "HP: "+ en.getHp());
                     choice[0] = "Attack";
                     choice[1] = "Defend";
                     choice[2] = "GTFO";
@@ -432,7 +434,7 @@ public class GameScript extends Thread {
         {
             dmg = (pl.getStr()/2) * roll.nextInt(crit+1);
             en.setHp(dmg);
-            setScene( "You deal "+ dmg +" damage, the " + en.getName() + "has " + en.getHp() + " left");
+            setScene("You deal " + dmg + " damage, the " + en.getName() + "has " + en.getHp() + " left");
         }
         else if ( hit < (pl.getDex()/2)  )
         {
