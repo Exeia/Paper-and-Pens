@@ -30,7 +30,7 @@ Requirements:
 
 Instruction for installing the app and building the app:
 
-Installation Instruction:  https://github.com/Exeia/Paper-and-Pens/blob/master/UserDoc.txt
+Installation Instruction:  https://github.com/Exeia/Paper-and-Pens/blob/master/Install_Instruction.txt
 
 Build Instruction: https://github.com/Exeia/Paper-and-Pens/blob/master/DevDoc.txt
 
