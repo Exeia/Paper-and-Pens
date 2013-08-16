@@ -1,6 +1,35 @@
-1. Download and Install Android SDK and Android USB driver (for windows)
+
+Android Device:
+================
+
+1. Download and Install Android SDK and Android USB driver (for Windows)
 2. Download the PaperandPen.zip file from the stable version or download the .apk file from  https://github.com/Exeia/Paper-and-Pens/blob/master/PaperAndPens/bin/PaperAndPens.apk 
-3. Unzip the PaperAndPen.zip file or skip this step if download the binary. 
+3. Unzip the PaperAndPen.zip file or skip this step if download the binary from link. 
 4. Connect the android device to the computer. Be sure enable USB debugging on the device. To do that go to Settings>Developer Option then click USB debugging on the device. This will enable the USB degugging.
 5. On the command prompt or terminal use the follown command "adb install <path>/PaperAndPens.apk.
-6. It's ready to go on Android Device. 
+6. It's ready to go on Android Device.
+
+
+Using Android Emulator:
+========================
+
+1. Download and Install Android SDK and Android USB driver (for Windows).
+2. Download the latest stable version of PaperAndPen or download the PaperAndPen.apk file from:
+ https://github.com/Exeia/Paper-and-Pens/blob/master/PaperAndPens/bin/PaperAndPens.apk 
+3. If download from stable verion, then unzip PaperAndPen.zip file. Find PaperAndPens.apk file is at <current_directory>/PaperAndPens/bin/ directory.
+Else if not then skip this step.
+4. Create AVD(android virtual device) using the Android SDK manager.
+	- Goto tools then to Manage AVD
+	- Click New and type a name for the AVD
+	- Customize it
+5. Windows: 
+	- Go to android-sdk-windows/tools and start the emulator using emulator
+	  emulator.exe 
+	- select and launch AVD
+   Linux
+	- cd <current directory>/android-sdk-linux/tools 
+	- use the command ./emulator -avd <name of user's avd>
+6. Copy to PaperAndPens.apk file to <current directory>/android-sdk-<platforms>/platform-tools/
+7. Go on the terminal/command prompt and cd to <current directory>/android-sdk-<platforms>/platform-tools/. Use the command ./adb install PaperAndPens.apk
+8. Once it's install, it's ready to be used.
+ 
