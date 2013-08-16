@@ -27,6 +27,8 @@ Requirements:
 - eclipse ide
 - jdk 5 and 6
 
+Instruction for installing the app and building the app:
+
 USER DOCUMENTS/Installation:  https://github.com/Exeia/Paper-and-Pens/blob/master/UserDoc.txt
 
 DEV DOCUMENTS/Build: https://github.com/Exeia/Paper-and-Pens/blob/master/DevDoc.txt
