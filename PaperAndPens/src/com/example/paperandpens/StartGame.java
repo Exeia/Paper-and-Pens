@@ -103,7 +103,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 			choice = (String) b1.getText();
 			gm.chose(ONE);
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(2000);
 				update();
 			} catch (InterruptedException e1) {
 				// TODO Auto-generated catch block
@@ -117,7 +117,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 			choice = (String) b2.getText();
 			gm.chose(TWO);
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(2000);
 				update();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -130,7 +130,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 			choice = (String) b3.getText();
 			gm.chose(THREE);
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(2000);
 				update();
 
 			} catch (InterruptedException e) {
@@ -143,7 +143,7 @@ public class StartGame extends Activity implements  View.OnClickListener{
 			choice = (String) b4.getText();
 			gm.chose(FOUR);
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(2000);
 				update();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -175,18 +175,20 @@ public void update()
 	ch = gm.getChoices();
 	if(gm.getBattle())
 	{
-		data = gm.getEn();
+		/*data = gm.getEn();
 		if (data == null )
 		{
 			Log.d(TAG, "no data");
 		}
 		else
-		{
-            b1.setText(ch[0]);
-            b2.setText(ch[1]);
-            b3.setText(ch[2]);
-            b4.setText(ch[3]);
-		}
+		{ */
+        status.setText(scene);
+        response.setText(gm.getPl_res());
+            b1.setText("Attack");
+            b2.setText("Defend");
+            b3.setText("Flee");
+            b4.setText("Skills");
+
 
 
 		

@@ -14,6 +14,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7f074655-383b-4d1d-9155-11eaf420b00f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/paperandpens/GameScript.java" afterPath="$PROJECT_DIR$/src/com/example/paperandpens/GameScript.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/paperandpens/StartGame.java" afterPath="$PROJECT_DIR$/src/com/example/paperandpens/StartGame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PaperAndPens.iws" />
@@ -21,12 +22,12 @@
     <file path="/Dummy.txt" changelist="7f074655-383b-4d1d-9155-11eaf420b00f" time="1376628218365" ignored="false" />
     <file path="/JobSelection.java" changelist="7f074655-383b-4d1d-9155-11eaf420b00f" time="1376375891491" ignored="false" />
     <file path="/Welcome.java" changelist="7f074655-383b-4d1d-9155-11eaf420b00f" time="1376375922623" ignored="false" />
-    <file path="/StartGame.java" changelist="7f074655-383b-4d1d-9155-11eaf420b00f" time="1376550324245" ignored="false" />
+    <file path="/StartGame.java" changelist="7f074655-383b-4d1d-9155-11eaf420b00f" time="1376638018540" ignored="false" />
     <file path="/Enemy.java" changelist="7f074655-383b-4d1d-9155-11eaf420b00f" time="1376457333831" ignored="false" />
     <file path="/Battle.java" changelist="7f074655-383b-4d1d-9155-11eaf420b00f" time="1376462290096" ignored="false" />
     <file path="/BattleSeq.java" changelist="7f074655-383b-4d1d-9155-11eaf420b00f" time="1376378734663" ignored="false" />
     <file path="/Player.java" changelist="7f074655-383b-4d1d-9155-11eaf420b00f" time="1376463444264" ignored="false" />
-    <file path="/GameScript.java" changelist="7f074655-383b-4d1d-9155-11eaf420b00f" time="1376615272420" ignored="false" />
+    <file path="/GameScript.java" changelist="7f074655-383b-4d1d-9155-11eaf420b00f" time="1376640978080" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +135,7 @@
       <file leaf-file-name="GameOver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/GameOver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="43" selection-start="657" selection-end="657" vertical-scroll-proportion="0.0">
+            <state line="24" column="40" selection-start="692" selection-end="692" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -143,7 +144,7 @@
       <file leaf-file-name="StartGame.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/StartGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="9" selection-start="2387" selection-end="2387" vertical-scroll-proportion="0.0">
+            <state line="184" column="8" selection-start="3963" selection-end="3963" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -161,7 +162,7 @@
       <file leaf-file-name="Welcome.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/Welcome.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="55" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
+            <state line="23" column="118" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -170,25 +171,7 @@
       <file leaf-file-name="GameScript.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/GameScript.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="60" selection-start="1821" selection-end="1821" vertical-scroll-proportion="0.15957446">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AsyncTask.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../../android-sdk-linux/platforms/android-17/android.jar!/android/os/AsyncTask.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="0" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Random.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../../android-sdk-linux/platforms/android-17/android.jar!/java/util/Random.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="0" selection-start="894" selection-end="894" vertical-scroll-proportion="0.0">
+            <state line="78" column="60" selection-start="1469" selection-end="1469" vertical-scroll-proportion="2.9287598">
               <folding />
             </state>
           </provider>
@@ -197,7 +180,7 @@
       <file leaf-file-name="BattleSeq.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/BattleSeq.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="44" selection-start="1878" selection-end="1878" vertical-scroll-proportion="0.0">
+            <state line="67" column="18" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -236,9 +219,9 @@
         <option value="$PROJECT_DIR$/src/com/example/paperandpens/Enemy.java" />
         <option value="$PROJECT_DIR$/src/com/example/paperandpens/Battle.java" />
         <option value="$PROJECT_DIR$/src/com/example/paperandpens/Player.java" />
-        <option value="$PROJECT_DIR$/src/com/example/paperandpens/StartGame.java" />
         <option value="$PROJECT_DIR$/src/com/example/paperandpens/BattleSeq.java" />
         <option value="$PROJECT_DIR$/src/com/example/paperandpens/GameScript.java" />
+        <option value="$PROJECT_DIR$/src/com/example/paperandpens/StartGame.java" />
       </list>
     </option>
   </component>
@@ -459,22 +442,22 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39932886" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32550335" sideWeight="0.2439394" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3204698" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6795302" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3305369" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32441473" sideWeight="0.7560606" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.30033556" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3204698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3204698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17424242" sideWeight="0.680602" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32348484" sideWeight="0.680602" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3305369" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
@@ -583,41 +566,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/GameOver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="43" selection-start="657" selection-end="657" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/StartGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="9" selection-start="2387" selection-end="2387" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/Weapon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/Welcome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="55" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/BattleSeq.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="44" selection-start="1878" selection-end="1878" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/Enemy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="85" column="68" selection-start="1843" selection-end="1843" vertical-scroll-proportion="0.0">
@@ -646,9 +594,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/BattleSeq.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="18" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/GameOver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="40" selection-start="692" selection-end="692" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/Weapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/StartGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="184" column="8" selection-start="3963" selection-end="3963" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/Welcome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="118" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/paperandpens/GameScript.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="60" selection-start="1821" selection-end="1821" vertical-scroll-proportion="0.15957446">
+        <state line="78" column="60" selection-start="1469" selection-end="1469" vertical-scroll-proportion="2.9287598">
           <folding />
         </state>
       </provider>

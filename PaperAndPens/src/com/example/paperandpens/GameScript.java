@@ -33,7 +33,7 @@ public class GameScript extends Thread {
 	private Player pl; 
 	private Enemy en;
 	String pl_res;
-	private boolean battle,over = false ;
+	private boolean battle,over = false , initial =false;
 	public BattleData data = null;
     private boolean player_turn = true,def;
     public final int RANGE = 20;
@@ -129,6 +129,15 @@ public class GameScript extends Thread {
                 {
 
                     battleUpdate(state);
+                    if(pl.getHp() <= 0)
+                    {
+                        over = true;
+                    }
+                    else if(en.getHp() <= 0)
+                    {
+                         win();
+                    }
+
 
                 }
                 else
@@ -392,9 +401,14 @@ public class GameScript extends Thread {
          {
 
                   Player_turn();
-
+               if(en.getHp() >= 0)
+               {
                   Enemy_turn();
-
+               }
+               else
+               {
+                   setbattle(false);
+               }
          }
         else
          {
@@ -434,7 +448,7 @@ public class GameScript extends Thread {
         {
             dmg = (pl.getStr()/2) * roll.nextInt(crit+1);
             en.setHp(dmg);
-            setScene("You deal " + dmg + " damage, the " + en.getName() + "has " + en.getHp() + " left");
+            setPl_res("You deal " + dmg + " damage, the " + en.getName() + "has " + en.getHp() + " left");
         }
         else if ( hit < (pl.getDex()/2)  )
         {
@@ -443,14 +457,14 @@ public class GameScript extends Thread {
         }
         else
         {
-            en.setHp(roll.nextInt(pl.getBased()));
+            dmg =roll.nextInt(pl.getBased()) ;
+            en.setHp(dmg);
+            setPl_res("You deal " + dmg + " damage, the " + en.getName() + "has " + en.getHp() + " left");
         }
     }
 
     public void battleUpdate(String state)
     {
-
-
 
         if(state.equals(choice[0]))
         {
@@ -466,10 +480,7 @@ public class GameScript extends Thread {
         }
         else
         {
-            choice[0] = "Attack";
-            choice[1] = "Defend";
-            choice[2] = "GTFO";
-            choice[3] = "Skills";
+
         }
 
     }
@@ -489,6 +500,11 @@ public class GameScript extends Thread {
     {
         return battle;
     }
+    public void win()
+    {
+
+    }
+
     public void setDef(boolean def)
     {
         this.def = def;
