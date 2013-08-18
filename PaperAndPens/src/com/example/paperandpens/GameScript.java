@@ -305,7 +305,7 @@ public class GameScript extends Thread {
 		{
 			setbattle(true);
 				
-					Enemy spirit = new Enemy("Annoying Spirit", 2,2,2,100,100);
+					Enemy spirit = new Enemy("Annoying Spirit", 2,2,2,100,100, 50);
 
 					en = spirit;
                     setPl_res("<What will you do?>");
@@ -495,7 +495,21 @@ public class GameScript extends Thread {
     }
     public void Flee()
     {
+        Random roll = new Random();
+        int toflee = roll.nextInt(RANGE);
+        if(toflee <= RANGE && toflee >= 11)
+        {
+            try {
+                Thread.sleep(5000);
 
+                setPl_res("(ﺧ益ﺨ) <flees away>");
+                setScene("");
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+    }
     }
     public boolean getBattle()
     {
@@ -503,6 +517,8 @@ public class GameScript extends Thread {
     }
     public void win()
     {
+        setPl_res("You have successfully defeated " + en.getName());
+        setScene("You receive: "+en.getExp() + " experiences");
 
     }
 

@@ -14,8 +14,8 @@ public class Enemy implements Parcelable{
 
     private String name;
     String tag = Enemy.class.getSimpleName();
-    private int hp,mp,atk,def,dex;
-    public Enemy(String name, int hp, int mp, int atk, int def, int dex)
+    private int hp,mp,atk,def,dex, exp;
+    public Enemy(String name, int hp, int mp, int atk, int def, int dex, int exp)
     {
         this.name = name;
         this.atk = atk;
@@ -23,6 +23,7 @@ public class Enemy implements Parcelable{
         this.dex = dex;
         this.hp = hp;
         this.mp = mp;
+        this.exp = exp;
     }
      public Enemy(Parcel in)
      {
@@ -68,6 +69,10 @@ public class Enemy implements Parcelable{
         this.hp = this.hp - hp;
     }
 
+    public int getExp()
+    {
+        return exp;
+    }
     @Override
     public int describeContents() {
         return 0;  //To change body of implemented methods use File | Settings | File Templates.
